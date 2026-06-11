@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Menu | Tommy's Pizza | South Richmond Hill, Queens NY</title>
-<meta name="description" content="Full menu at Tommy's Pizza in South Richmond Hill, Queens — appetizers, salads, heroes, pastas, entrées, seafood, burgers, desserts and more. Family-owned since 1967. Order online for pickup or delivery.">
+<title>Catering &amp; Parties | Tommy's Pizza | South Richmond Hill, Queens NY</title>
+<meta name="description" content="Catering from Tommy's Pizza in Queens — party packages, pizza by the pie, pasta trays, hot trays, hero platters, appetizers and sweets. Office lunches, family gatherings, memorial receptions and kids' birthday parties. Free delivery over $200 within 5 miles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,32 +19,26 @@ html{scroll-behavior:smooth}
 body{font-family:'Public Sans',sans-serif;background:var(--white);color:var(--black);line-height:1.6;font-size:16px;font-weight:300;padding-bottom:68px;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.05}
 a{color:inherit}
+img{max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 .eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.28em;color:var(--gray)}
 .btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.18em;padding:16px 36px;font-size:12px;transition:background .2s}
 .btn:hover{background:var(--red-dk)}
+.btn.ghost{background:transparent;color:var(--black);box-shadow:inset 0 0 0 1px var(--black)}
+.btn.ghost:hover{background:var(--black);color:#fff}
 .btn:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-
 .announce{background:var(--black);color:#fff;text-align:center;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;padding:9px 16px}
 .announce b{font-weight:600;color:#ffd2de}
-
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
-.logo .name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;letter-spacing:.04em}
-.logo .sub{font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.34em;color:var(--gray);margin-top:3px}
+.top-left{display:flex;align-items:center;gap:12px}
+.logo img{height:50px;width:auto;display:block}
+@media(min-width:900px){.logo img{height:56px}}
 .topbar nav.main{display:none;gap:36px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em}
 .topbar nav.main a{text-decoration:none;color:var(--gray);padding:6px 0;border-bottom:1px solid transparent}
 .topbar nav.main a:hover,.topbar nav.main a.on{color:var(--black);border-bottom-color:var(--black)}
 .topbar .btn{padding:12px 24px}
 @media(min-width:900px){.topbar nav.main{display:flex}}
-
-
-.logo img{height:50px;width:auto;display:block}
-@media(min-width:900px){.logo img{height:56px}}
-/* mobile nav */
-.top-left{display:flex;align-items:center;gap:12px}
-
 .navtoggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:0;cursor:pointer;padding:8px}
 .navtoggle span{display:block;height:1.5px;background:var(--black);transition:transform .2s,opacity .2s}
 .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -56,22 +50,16 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);ba
 .mobilemenu a{display:block;padding:17px 24px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.22em;text-decoration:none;border-top:1px solid var(--line);color:var(--black)}
 .mobilemenu a:active{background:var(--paper)}
 @media(min-width:900px){.mobilemenu{display:none!important}}
-
-/* page head */
 .page-head{text-align:center;padding:64px 24px 44px}
-.page-head h1{font-size:clamp(44px,7vw,76px)}
+.page-head h1{font-size:clamp(42px,7vw,72px)}
 .page-head h1 .ital{font-style:italic;font-weight:500}
 .page-head .rule{width:48px;height:1px;background:var(--black);margin:22px auto 0}
-.page-head p{max-width:520px;margin:18px auto 0;color:var(--gray);font-size:15px}
-
-/* category nav */
+.page-head p{max-width:560px;margin:18px auto 0;color:var(--gray);font-size:15px}
 .catnav{position:sticky;top:72px;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .catnav .scroll{display:flex;gap:6px;overflow-x:auto;padding:12px 24px;max-width:var(--max);margin:0 auto;scrollbar-width:none}
 .catnav .scroll::-webkit-scrollbar{display:none}
 .catnav a{flex:0 0 auto;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gray);text-decoration:none;padding:8px 14px;border:1px solid transparent;white-space:nowrap}
 .catnav a:hover{color:var(--black);border-color:var(--line)}
-
-/* menu sections */
 .msec{padding:64px 0 8px;scroll-margin-top:140px}
 .msec .head{text-align:center;margin-bottom:38px}
 .msec .head h2{font-size:clamp(32px,4.5vw,46px)}
@@ -84,33 +72,52 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);ba
 .item .dots{flex:1;border-bottom:1px dotted #c9c9c9;transform:translateY(-5px)}
 .item .price{font-size:14px;font-weight:500;letter-spacing:.04em;white-space:nowrap}
 .item .desc{font-size:13.5px;color:var(--gray);margin-top:4px;max-width:420px}
-
-/* pizza callout */
-.pizza-call{background:var(--black);color:#fff;text-align:center;padding:70px 24px;margin-top:64px}
-.pizza-call h2{font-size:clamp(34px,5vw,52px)}
-.pizza-call h2 .ital{font-style:italic;font-weight:500}
-.pizza-call p{max-width:480px;margin:16px auto 30px;color:#b8b8b8;font-size:15px}
-
-.fine{max-width:760px;margin:56px auto 0;padding:0 24px;text-align:center;font-size:11.5px;color:var(--gray);line-height:1.7;letter-spacing:.02em}
-
-.endcta{text-align:center;padding:64px 24px}
-
-footer{background:var(--black);color:#fff;padding:48px 0;text-align:center;margin-top:64px}
-footer .name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700}
+/* package cards */
+.pkg-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);max-width:980px;margin:0 auto}
+@media(min-width:760px){.pkg-grid{grid-template-columns:1fr 1fr}}
+.pkg{background:var(--white);padding:40px 34px;text-align:center}
+.pkg h3{font-size:27px;margin:10px 0 6px}
+.pkg .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:var(--red)}
+.pkg p{font-size:14px;color:var(--gray);margin-top:10px}
+.pkg .serves{display:inline-block;margin-top:14px;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;border:1px solid var(--line);padding:6px 14px;color:var(--gray)}
+/* memorial */
+.memorial{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0;margin-top:64px}
+.memorial .inner{max-width:680px;margin:0 auto;text-align:center;padding:0 24px}
+.memorial h2{font-size:clamp(30px,4.5vw,44px)}
+.memorial p.sub{color:var(--gray);font-size:14.5px;margin:16px 0 30px}
+.memorial .mrow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);text-align:left}
+.memorial .mrow .name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;white-space:nowrap}
+.memorial .mrow .d{font-size:13px;color:var(--gray);flex:1;padding:0 8px}
+.memorial .mrow .price{font-weight:500;font-size:14px}
+/* birthday */
+.bday{background:var(--black);color:#fff;text-align:center;padding:76px 24px;margin-top:64px}
+.bday .eyebrow{color:#9a9a9a}
+.bday h2{font-size:clamp(32px,5vw,50px);margin:14px 0}
+.bday h2 .ital{font-style:italic;font-weight:500}
+.bday .price{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600}
+.bday .price small{font-size:17px;font-style:italic;font-weight:500}
+.bday p{max-width:460px;margin:14px auto 30px;color:#b8b8b8;font-size:15px}
+/* how to order */
+.order-grid{display:grid;gap:36px;max-width:980px;margin:0 auto;text-align:center}
+@media(min-width:760px){.order-grid{grid-template-columns:repeat(3,1fr)}}
+.oi h3{font-size:23px;margin:10px 0 8px}
+.oi p{font-size:13.5px;color:var(--gray)}
+.endcta{text-align:center;padding:56px 24px 64px}
+.endcta .btn{margin:6px}
+footer{background:var(--black);color:#fff;padding:48px 0;text-align:center}
 footer .sub{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.34em;color:#9a9a9a;margin-top:5px}
 footer .fine2{font-size:12px;color:#8a8a8a;margin-top:16px}
 footer a{color:#e3e3e3}
-
 .orderbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;box-shadow:0 -4px 14px rgba(0,0,0,.15)}
 .orderbar a{flex:1;text-align:center;padding:17px 8px;color:#fff;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:12px}
-.orderbar a.call{flex:0 0 34%;background:var(--black)}
+.orderbar a.call{flex:0 0 26%;background:var(--black)}
 .orderbar a.order{background:var(--red)}
 @media(min-width:900px){.orderbar{display:none}body{padding-bottom:0}}
 </style>
 </head>
 <body>
 
-<div class="announce">10% off your first online order — code <b>TOMMYS10</b></div>
+<div class="announce">Free catering delivery over $200 · 5-mile radius · <b>(718) 835-4408</b></div>
 
 <header class="site">
   <div class="wrap topbar">
@@ -121,17 +128,17 @@ footer a{color:#e3e3e3}
       </a>
     </div>
     <nav class="main" aria-label="Main">
-      <a class="on" href="menu.html">Menu</a>
+      <a href="menu.html">Menu</a>
       <a href="index.html#story">Our Story</a>
-      <a href="catering.html">Catering</a>
+      <a class="on" href="catering.html">Catering</a>
       <a href="index.html#visit">Visit</a>
     </nav>
-    <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+    <a class="btn" href="tel:+17188354408">Call to Order</a>
   </div>
   <nav class="mobilemenu" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
     <a href="index.html#story">Our Story</a>
-    <a href="catering.html">Catering</a>
     <a href="index.html#visit">Visit</a>
     <a href="tel:+17188354408">Call (718) 835-4408</a>
   </nav>
@@ -139,237 +146,192 @@ footer a{color:#e3e3e3}
 
 <div class="page-head">
   <span class="eyebrow">Tommy's Pizza · Since 1967</span>
-  <h1>The <span class="ital">Menu</span></h1>
+  <h1>Catering <span class="ital">&amp; Parties</span></h1>
   <div class="rule"></div>
-  <p>Everything made fresh to order on Liberty Avenue. Order online for pickup or delivery, or call (718) 835-4408.</p>
+  <p>Feeding your office, family gathering, team, or memorial since 1967 — the same recipes, the same family, the same Queens.</p>
 </div>
 
-<nav class="catnav" aria-label="Menu sections">
+<nav class="catnav" aria-label="Catering sections">
   <div class="scroll">
-    <a href="#pizza">Pizza</a>
-    <a href="#sicilian">Sicilian</a>
-    <a href="#gourmet">Gourmet Pizza</a>
-    <a href="#appetizers">Appetizers</a>
-    <a href="#salads">Salads</a>
-    <a href="#soups">Soups</a>
-    <a href="#heros">Heros</a>
-    <a href="#wraps">Wraps</a>
-    <a href="#burgers">Burgers</a>
-    <a href="#entrees">Entrées</a>
-    <a href="#pasta">Pasta</a>
-    <a href="#baked">Baked</a>
-    <a href="#seafood">Seafood</a>
-    <a href="#kids">Kids</a>
-    <a href="#desserts">Desserts</a>
+    <a href="#packages">Party Packages</a>
+    <a href="#pies">Pizza by the Pie</a>
+    <a href="#pasta">Pasta Trays</a>
+    <a href="#hot">Hot Trays</a>
+    <a href="#salads">Salads &amp; Heroes</a>
+    <a href="#apps">Appetizers</a>
+    <a href="#sweets">Sweets &amp; Drinks</a>
+    <a href="#memorial">Memorial</a>
+    <a href="#birthday">Birthdays</a>
+    <a href="#how">How to Order</a>
   </div>
 </nav>
 
 <main>
 
-<!-- PIZZA -->
-<section class="msec" id="pizza">
-  <div class="head"><h2>Pizza</h2><p class="note">Classic cheese pies · By the slice available in store</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">XLarge 18"</span><span class="dots"></span><span class="price">19.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Medium 16"</span><span class="dots"></span><span class="price">17.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Small 14"</span><span class="dots"></span><span class="price">15.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Personal 10"</span><span class="dots"></span><span class="price">11.50</span></div></div>
+<section class="msec" id="packages">
+  <div class="head"><h2>Party Packages</h2><p class="note">The easiest way to feed a crowd</p></div>
+  <div class="wrap" style="padding:0 24px">
+  <div class="pkg-grid">
+    <div class="pkg">
+      <span class="eyebrow">Serves 10–12</span>
+      <h3>The Office Lunch</h3>
+      <span class="price">$119</span>
+      <p>4 large cheese pies · 24 traditional wings · large Caesar salad · garlic knots · 2L soda</p>
+    </div>
+    <div class="pkg">
+      <span class="eyebrow">Serves 16–20</span>
+      <h3>The Family Bundle</h3>
+      <span class="price">$189</span>
+      <p>6 large pies (2 specialty, 4 cheese) · 36 wings · 2 large salads · garlic bread · 2L soda</p>
+    </div>
+    <div class="pkg">
+      <span class="eyebrow">Serves 30–40</span>
+      <h3>The Big Game</h3>
+      <span class="price">$329</span>
+      <p>10 large pies · 60 wings · 1 full pasta tray · 2 large salads · zeppoles · 4 sodas</p>
+    </div>
+    <div class="pkg">
+      <span class="eyebrow">Serves 60–80</span>
+      <h3>The Block Party</h3>
+      <span class="price">$649</span>
+      <p>20 large pies · 100 wings · 2 full pasta trays · 1 hero platter · 3 large salads · cannoli tray</p>
+    </div>
   </div>
-  <div class="head" style="margin-top:44px;margin-bottom:18px"><h2 style="font-size:clamp(24px,3.5vw,32px)">Toppings</h2></div>
-  <div class="wrap" style="max-width:980px">
-    <p style="text-align:center;font-size:14px;color:var(--gray);letter-spacing:.04em;line-height:2">
-      Mushrooms · Peppers · Onions · Olives · Pineapple · Broccoli · Spinach · Eggplant · Jalapeños · Tomatoes · Extra Cheese · Pepperoni · Sausage · Anchovies · Ham · Chicken · Shrimp
-    </p>
-  </div>
-</section>
-
-<section class="msec" id="sicilian">
-  <div class="head"><h2>Sicilian</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Sicilian</span><span class="dots"></span><span class="price">22</span></div><p class="desc">Thick-crusted, crispy undercarriage, airy center dough</p></div>
-    <div class="item"><div class="row"><span class="name">Grandma</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Crispy-crust airy dough topped with mozzarella and layered with tomato sauce, garlic &amp; olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Nonna's Trio</span><span class="dots"></span><span class="price">28</span></div><p class="desc">Topped with mozzarella &amp; layered with vodka, pesto &amp; marinara sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Drunken Sicilian</span><span class="dots"></span><span class="price">28</span></div><p class="desc">Creamy vodka sauce topped with fresh mozzarella &amp; basil</p></div>
-  </div>
-</section>
-
-<section class="msec" id="gourmet">
-  <div class="head"><h2>Gourmet Pizza</h2><p class="note">Personal 15 · Small 24 · Medium 26 · XLarge 28</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Tommy's Special</span></div><p class="desc">Pepperoni, sausage, eggplant, broccoli, red &amp; green peppers</p></div>
-    <div class="item"><div class="row"><span class="name">Margherita</span></div><p class="desc">Fresh tomato sauce, mozzarella cheese, basil leaves &amp; a drizzle of olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Buffalo</span></div><p class="desc">Fried chicken in our homemade buffalo sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Bacon Ranch</span></div><p class="desc">Fried chicken &amp; bacon drizzled with ranch dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Sweet Baby BBQ</span></div><p class="desc">Fried chicken in our BBQ sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Sweet Heat Hawaiian</span></div><p class="desc">Pineapple, ham &amp; red pepper flakes drizzled with honey</p></div>
-    <div class="item"><div class="row"><span class="name">Honeymooner</span></div><p class="desc">Savoury pepperoni drizzled with sweet honey</p></div>
-    <div class="item"><div class="row"><span class="name">Meatlovers</span></div><p class="desc">Pepperoni, sausage &amp; bacon</p></div>
-    <div class="item"><div class="row"><span class="name">Sizzling Fiesta</span></div><p class="desc">Ribeye steak, onions, peppers, green salsa &amp; cilantro</p></div>
-    <div class="item"><div class="row"><span class="name">Taco Loco</span></div><p class="desc">Seasoned beef, lettuce, tomato, three cheese &amp; taco sauce</p></div>
-    <div class="item"><div class="row"><span class="name">White</span></div><p class="desc">Creamy ricotta cheese and mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Cream of Spinach</span></div><p class="desc">Fresh spinach in our homemade creamy sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Vegetable</span></div><p class="desc">Eggplant, broccoli, red and green peppers &amp; mushroom</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Caesar</span></div><p class="desc">Grilled chicken, romaine lettuce, pecorino romano &amp; caesar dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ziti</span></div><p class="desc">Ziti pasta mixed with tomato sauce and ricotta cheese, topped with mozzarella cheese</p></div>
-  </div>
-  <div style="text-align:center;margin-top:36px">
-    <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Build Your Pie &amp; Order Online</a>
   </div>
 </section>
 
-<section class="msec" id="appetizers">
-  <div class="head"><h2>Appetizers</h2></div>
+<section class="msec" id="pies">
+  <div class="head"><h2>Pizza by the Pie</h2><p class="note">18-inch round · 16-cut Sicilian</p></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Mini Rice Balls (4)</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Creamy rice filled with peas, tomato sauce and mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Clams (6)</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fresh little neck clams baked with seasoned breadcrumbs</p></div>
-    <div class="item"><div class="row"><span class="name">Stuffed Mushrooms (6)</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Mushroom caps filled with chopped mushroom, breadcrumbs, cheese, herbs &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Fried Calamari</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Coated in a light batter, fried golden &amp; crispy</p></div>
-    <div class="item"><div class="row"><span class="name">Mozzarella Sticks (6)</span><span class="dots"></span><span class="price">8.50</span></div><p class="desc">Crispy golden battered cheese sticks</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Wings (6)</span><span class="dots"></span><span class="price">9.50</span></div><p class="desc">Fresh party wings tossed in your choice of sauce — buffalo, BBQ, mango habanero, honey BBQ or garlic parm</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic Bread</span><span class="dots"></span><span class="price">6</span></div><p class="desc">Toasted Italian bread with garlic butter</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic Knots (5)</span><span class="dots"></span><span class="price">5</span></div><p class="desc">Freshly baked bread, olive oil and fresh garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Zucchini Fritte</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Crispy breaded zucchini slices</p></div>
-    <div class="item"><div class="row"><span class="name">French Fries</span><span class="dots"></span><span class="price">5.50</span></div><p class="desc">Served with ketchup</p></div>
-  </div>
-</section>
-
-<section class="msec" id="salads">
-  <div class="head"><h2>Salads</h2><p class="note">Add chicken 6 · Add shrimp 9</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Italian</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Romaine lettuce, tomato, onion, olives &amp; cucumber</p></div>
-    <div class="item"><div class="row"><span class="name">Caesar</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Romaine lettuce, pecorino romano &amp; croutons</p></div>
-    <div class="item"><div class="row"><span class="name">Caprese</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Homemade fresh mozzarella, sliced tomato, drizzle of balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Cold Antipasto</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Romaine lettuce, ham, tomato, broccoli, onion, olives, cucumber and mozzarella cheese</p></div>
-  </div>
-</section>
-
-<section class="msec" id="soups">
-  <div class="head"><h2>Soups</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Chicken Noodle</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots &amp; spaghetti pasta</p></div>
-    <div class="item"><div class="row"><span class="name">Lentil</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots, onion &amp; tomato</p></div>
-    <div class="item"><div class="row"><span class="name">Minestrone</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots, onion, green peas, chickpeas, green beans, red beans, spinach, potatoes &amp; tomatoes</p></div>
-  </div>
-</section>
-
-<section class="msec" id="heros">
-  <div class="head"><h2>Heros</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">The Racetrack</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fried chicken, grilled eggplant, roasted red pepper, fresh mozzarella &amp; balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Casino</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Toasted garlic bread, fried sausage, sautéed peppers &amp; onions &amp; fresh mozz</p></div>
-    <div class="item"><div class="row"><span class="name">Two Yoots</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fried chicken, pesto, vodka sauce &amp; fresh mozz</p></div>
-    <div class="item"><div class="row"><span class="name">JFK Heist</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Grilled chicken, fresh mozzarella, red peppers &amp; balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fried chicken, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Parm</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Fried shrimp, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Meatball Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Beef meatballs, tomato sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Italian sausage, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Breaded eggplant, tomato sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Veal Parm</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Fried veal, marinara &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Philly Cheese</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Chopped ribeye steak, sautéed onions &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Potato &amp; Egg</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Fried potato, egg &amp; mozz cheese</p></div>
-  </div>
-</section>
-
-<section class="msec" id="wraps">
-  <div class="head"><h2>Wraps</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Caesar</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Grilled chicken, romaine lettuce, pecorino romano and caesar dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Buffalo</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Buffalo chicken, lettuce, tomato and american cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Grilled or fried chicken, lettuce, tomato and mayo</p></div>
-  </div>
-</section>
-
-<section class="msec" id="burgers">
-  <div class="head"><h2>Burgers</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Tommy's Cheeseburger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">8oz angus beef, american cheese, lettuce, tomato, red onion, mayo and ketchup, served with fries</p></div>
-    <div class="item"><div class="row"><span class="name">Spicy Turkey Burger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">6oz ground turkey, american cheese, lettuce, tomato and ketchup, served with fries</p></div>
-    <div class="item"><div class="row"><span class="name">BBQ Burger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">8oz angus beef, american cheese, fried onion and BBQ sauce, served with fries</p></div>
-  </div>
-</section>
-
-<section class="msec" id="entrees">
-  <div class="head"><h2>Entrées</h2><p class="note">Add pasta or salad 4.50</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Chicken Cutlet Parmigiana</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Tomato sauce topped with mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Marsala</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-seared, savory marsala wine sauce &amp; mushrooms</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Francese</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-fried, silky lemon butter sauce enriched with white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Piccata</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-seared, tangy butter sauce, lemon, capers &amp; white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Rollatini</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Sliced eggplant rolled with creamy ricotta filling, marinara &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Parmigiana</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Thinly sliced eggplant layered with tomato sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage Parmigiana</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Italian sausage, marinara sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage and Peppers</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Italian sausage, bell peppers, onions &amp; tomato sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Veal Parmigiana</span><span class="dots"></span><span class="price">19</span></div><p class="desc">Fried veal cutlets, marinara sauce &amp; mozzarella cheese</p></div>
+    <div class="item"><div class="row"><span class="name">Cheese Pie</span><span class="dots"></span><span class="price">$18</span></div><p class="desc">Classic NY-style. The one we built our name on.</p></div>
+    <div class="item"><div class="row"><span class="name">Sicilian Cheese</span><span class="dots"></span><span class="price">$28</span></div><p class="desc">Square pie, golden crust, sweet tomato.</p></div>
+    <div class="item"><div class="row"><span class="name">Grandma Sicilian</span><span class="dots"></span><span class="price">$30</span></div><p class="desc">Fresh mozz, garlic, basil. House favorite.</p></div>
+    <div class="item"><div class="row"><span class="name">Nonna's Trio Sicilian</span><span class="dots"></span><span class="price">$34</span></div><p class="desc">Marinara, pesto, vodka — three in one.</p></div>
+    <div class="item"><div class="row"><span class="name">Tommy's Special</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Broccoli, eggplant, peppers, sausage, pepperoni.</p></div>
+    <div class="item"><div class="row"><span class="name">Sweet Heat Hawaiian</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Pineapple, ham, sweet honey heat.</p></div>
+    <div class="item"><div class="row"><span class="name">Buffalo Chicken</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Crispy buffalo chicken, drizzle of ranch.</p></div>
+    <div class="item"><div class="row"><span class="name">Margherita</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Crushed tomato, fresh mozz, basil.</p></div>
+    <div class="item"><div class="row"><span class="name">White Pie</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Ricotta, mozz, pecorino. No sauce.</p></div>
+    <div class="item"><div class="row"><span class="name">Meat Lovers</span><span class="dots"></span><span class="price">$22</span></div><p class="desc">Pepperoni, sausage, bacon.</p></div>
   </div>
 </section>
 
 <section class="msec" id="pasta">
-  <div class="head"><h2>Pasta</h2><p class="note">Choice of penne, spaghetti, linguine, fettuccine, rigatoni, angel hair or whole wheat</p></div>
+  <div class="head"><h2>Pasta Trays</h2><p class="note">Half tray serves 8–10 · Full tray serves 16–20</p></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Romagna</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Pan fried sausage in a creamy onion garlic sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Bosca</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Chopped beef, mushrooms, sweet peas &amp; tomato sauce with a touch of cream</p></div>
-    <div class="item"><div class="row"><span class="name">Puttanesca</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Ripe tomatoes, savory anchovies, black olives, capers, chilli &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Toscana</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Fried chicken, cream sauce, spinach, cherry tomato &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Rustica</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Grilled chicken, fresh spinach, roasted peppers, garlic &amp; oil</p></div>
-    <div class="item"><div class="row"><span class="name">Primavera</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Peas, carrots, broccoli, peppers, mushrooms, garlic &amp; oil &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Carbonara</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Creamy sauce with crispy bacon &amp; fresh pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Alfredo</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Classic cream sauce with pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Vodka</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Creamy tomato sauce with vodka flavor</p></div>
-    <div class="item"><div class="row"><span class="name">Pesto</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fresh creamy basil sauce, garlic &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic &amp; Oil</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fresh garlic and extra virgin olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Marinara</span><span class="dots"></span><span class="price">13</span></div><p class="desc">Plum tomatoes, fresh basil &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Tomato</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Freshly made with rich blended tomatoes</p></div>
+    <div class="item"><div class="row"><span class="name">Penne Vodka</span><span class="dots"></span><span class="price">$55 / $95</span></div><p class="desc">Plum tomato, cream, vodka.</p></div>
+    <div class="item"><div class="row"><span class="name">Baked Ziti</span><span class="dots"></span><span class="price">$60 / $105</span></div><p class="desc">Tomato, ricotta, fresh mozzarella.</p></div>
+    <div class="item"><div class="row"><span class="name">Lasagna</span><span class="dots"></span><span class="price">$70 / $125</span></div><p class="desc">Layered beef, ricotta, mozzarella, sauce.</p></div>
+    <div class="item"><div class="row"><span class="name">Pasta with Meatballs</span><span class="dots"></span><span class="price">$65 / $115</span></div><p class="desc">Hand-rolled beef meatballs, marinara.</p></div>
+    <div class="item"><div class="row"><span class="name">Penne Alfredo</span><span class="dots"></span><span class="price">$60 / $105</span></div><p class="desc">Cream, butter, pecorino romano.</p></div>
+    <div class="item"><div class="row"><span class="name">Penne Carbonara</span><span class="dots"></span><span class="price">$65 / $115</span></div><p class="desc">Pancetta, egg, pecorino, black pepper.</p></div>
+    <div class="item"><div class="row"><span class="name">Tommy's Cognac</span><span class="dots"></span><span class="price">$70 / $125</span></div><p class="desc">Mushrooms, ham, cognac cream sauce.</p></div>
+    <div class="item"><div class="row"><span class="name">Pasta Primavera</span><span class="dots"></span><span class="price">$60 / $105</span></div><p class="desc">Broccoli, peppers, mushrooms, carrots, peas.</p></div>
+    <div class="item"><div class="row"><span class="name">Penne Marinara</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Crushed plum tomato, garlic, basil.</p></div>
+    <div class="item"><div class="row"><span class="name">Stuffed Shells</span><span class="dots"></span><span class="price">$65 / $115</span></div><p class="desc">Ricotta-filled jumbo shells, marinara.</p></div>
+    <div class="item"><div class="row"><span class="name">Baked Ravioli</span><span class="dots"></span><span class="price">$65 / $115</span></div><p class="desc">Cheese ravioli baked with sauce &amp; mozzarella.</p></div>
+    <div class="item"><div class="row"><span class="name">Penne Bosca</span><span class="dots"></span><span class="price">$70 / $125</span></div><p class="desc">Beef, mushrooms, peas, creamy tomato.</p></div>
   </div>
 </section>
 
-<section class="msec" id="baked">
-  <div class="head"><h2>Baked Specialties</h2></div>
+<section class="msec" id="hot">
+  <div class="head"><h2>Hot Trays</h2><p class="note">Half tray serves 8–10 · Full tray serves 16–20</p></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Lasagna</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Flat layered pasta, ground beef, tomato sauce, ricotta cheese &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ziti</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Tomato sauce, ricotta cheese &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Stuffed Shells</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Jumbo pasta shells, creamy ricotta, tomato sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ravioli</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Cheese filled ravioli, tomato sauce &amp; mozzarella cheese</p></div>
+    <div class="item"><div class="row"><span class="name">Chicken Parmigiana</span><span class="dots"></span><span class="price">$55 / $95</span></div><p class="desc">Breaded cutlets, sauce, mozz.</p></div>
+    <div class="item"><div class="row"><span class="name">Eggplant Parmigiana</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Hand-breaded, layered, baked.</p></div>
+    <div class="item"><div class="row"><span class="name">Sausage &amp; Peppers</span><span class="dots"></span><span class="price">$55 / $95</span></div><p class="desc">Italian sausage, sweet peppers, onion.</p></div>
+    <div class="item"><div class="row"><span class="name">Chicken Francese</span><span class="dots"></span><span class="price">$60 / $100</span></div><p class="desc">Egg-battered, lemon, white wine.</p></div>
+    <div class="item"><div class="row"><span class="name">Chicken Marsala</span><span class="dots"></span><span class="price">$60 / $100</span></div><p class="desc">Mushrooms in marsala wine sauce.</p></div>
+    <div class="item"><div class="row"><span class="name">Veal Parmigiana</span><span class="dots"></span><span class="price">$95 / $175</span></div><p class="desc">Tender breaded veal, sauce, mozz.</p></div>
+    <div class="item"><div class="row"><span class="name">Meatballs in Sauce</span><span class="dots"></span><span class="price">$55 / $95</span></div><p class="desc">House-made beef meatballs, marinara.</p></div>
+    <div class="item"><div class="row"><span class="name">Eggplant Rollatini</span><span class="dots"></span><span class="price">$70 / $125</span></div><p class="desc">Breaded eggplant rolled with ricotta.</p></div>
   </div>
 </section>
 
-<section class="msec" id="seafood">
-  <div class="head"><h2>Seafood</h2><p class="note">Served with pasta</p></div>
+<section class="msec" id="salads">
+  <div class="head"><h2>Salads &amp; Hero Platters</h2><p class="note">Salads: half serves 8–10 · full serves 16–20</p></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Mussels Positano</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Mussels simmered in a rich garlic butter sauce with a hint of white wine and red pepper, finished with parsley</p></div>
-    <div class="item"><div class="row"><span class="name">Amalfi Pasta</span><span class="dots"></span><span class="price">24</span></div><p class="desc">A generous mix of clams, mussels, calamari and shrimp simmered in white wine, finished in a creamy marinara</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Parmigiana</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Fried shrimp, marinara sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Scampi</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Garlic buttery sauce enriched with white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Tommaso</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Sautéed shrimp, cherry tomatoes, garlic, parmesan and parsley in a light olive oil sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Fish &amp; Chips</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Shrimp, calamari, mussels &amp; clams sautéed in garlic and olive oil with white wine, finished in a house marinara with a touch of cream</p></div>
+    <div class="item"><div class="row"><span class="name">Caesar Salad</span><span class="dots"></span><span class="price">$35 / $65</span></div><p class="desc">Romaine, pecorino, croutons, dressing.</p></div>
+    <div class="item"><div class="row"><span class="name">Italian Salad</span><span class="dots"></span><span class="price">$30 / $55</span></div><p class="desc">Romaine, tomato, onion, olive, cucumber.</p></div>
+    <div class="item"><div class="row"><span class="name">Cold Antipasto</span><span class="dots"></span><span class="price">$45 / $80</span></div><p class="desc">Ham, mozz, broccoli, olives, veg.</p></div>
+    <div class="item"><div class="row"><span class="name">Caprese</span><span class="dots"></span><span class="price">$45 / $80</span></div><p class="desc">Fresh mozz, tomato, balsamic glaze.</p></div>
+    <div class="item"><div class="row"><span class="name">3-Foot Italian Combo</span><span class="dots"></span><span class="price">$85</span></div><p class="desc">Ham, salami, capicola, provolone.</p></div>
+    <div class="item"><div class="row"><span class="name">3-Foot Chicken Parm</span><span class="dots"></span><span class="price">$90</span></div><p class="desc">Crispy cutlet, sauce, fresh mozz.</p></div>
+    <div class="item"><div class="row"><span class="name">3-Foot Meatball Parm</span><span class="dots"></span><span class="price">$85</span></div><p class="desc">House meatballs, sauce, mozz.</p></div>
+    <div class="item"><div class="row"><span class="name">6-Foot Italian Combo</span><span class="dots"></span><span class="price">$160</span></div><p class="desc">Same as above, double the love.</p></div>
   </div>
 </section>
 
-<section class="msec" id="kids">
-  <div class="head"><h2>Kids Menu</h2></div>
+<section class="msec" id="apps">
+  <div class="head"><h2>Appetizers</h2><p class="note">Half tray serves 8–10 · Full tray serves 16–20</p></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Pasta</span><span class="dots"></span><span class="price">8</span></div><p class="desc">Penne or spaghetti in a tomato or butter sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Nuggets (4 pcs) &amp; Fries</span><span class="dots"></span><span class="price">8</span></div><p class="desc">Fried nuggets served with fries</p></div>
+    <div class="item"><div class="row"><span class="name">Fried Calamari</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Coated in light batter, fried golden &amp; crispy.</p></div>
+    <div class="item"><div class="row"><span class="name">Baked Clams</span><span class="dots"></span><span class="price">$55 / $100</span></div><p class="desc">Fresh little neck clams, seasoned breadcrumbs.</p></div>
+    <div class="item"><div class="row"><span class="name">Mini Rice Balls</span><span class="dots"></span><span class="price">$45 / $90</span></div><p class="desc">Creamy rice, peas, tomato, mozzarella.</p></div>
+    <div class="item"><div class="row"><span class="name">Mini Meatballs</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">House-made, slow-simmered in marinara.</p></div>
+    <div class="item"><div class="row"><span class="name">Stuffed Mushrooms</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Mushroom caps filled with breadcrumbs, cheese, herbs.</p></div>
+    <div class="item"><div class="row"><span class="name">Potato Croquettes</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Golden fried potato croquettes.</p></div>
+    <div class="item"><div class="row"><span class="name">Wings</span><span class="dots"></span><span class="price">$50 / $90</span></div><p class="desc">Traditional or boneless. Buffalo, BBQ, or plain.</p></div>
   </div>
 </section>
 
-<section class="msec" id="desserts">
-  <div class="head"><h2>Desserts</h2></div>
+<section class="msec" id="sweets">
+  <div class="head"><h2>Sweets &amp; Beverages</h2></div>
   <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Cheesecake</span><span class="dots"></span><span class="price">6.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Tres Leche</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Tiramisu</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Chocolate Mousse</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Red Velvet</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Zeppole</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Cannoli</span><span class="dots"></span><span class="price">6</span></div></div>
+    <div class="item"><div class="row"><span class="name">Cannoli Tray (24)</span><span class="dots"></span><span class="price">$55</span></div><p class="desc">Filled fresh to order.</p></div>
+    <div class="item"><div class="row"><span class="name">Tiramisu Tray</span><span class="dots"></span><span class="price">$50</span></div><p class="desc">Layered espresso, mascarpone, cocoa.</p></div>
+    <div class="item"><div class="row"><span class="name">Zeppoles (50)</span><span class="dots"></span><span class="price">$35</span></div><p class="desc">Warm, dusted in powdered sugar.</p></div>
+    <div class="item"><div class="row"><span class="name">Assorted Pastry Tray</span><span class="dots"></span><span class="price">$60</span></div><p class="desc">Mixed Italian classics.</p></div>
+    <div class="item"><div class="row"><span class="name">2-Liter Soda</span><span class="dots"></span><span class="price">$5</span></div><p class="desc">Coke, Diet, Sprite, Ginger Ale.</p></div>
+    <div class="item"><div class="row"><span class="name">Bottled Water (24-pk)</span><span class="dots"></span><span class="price">$18</span></div><p class="desc">16 oz bottles.</p></div>
+    <div class="item"><div class="row"><span class="name">Snapple (24-pk)</span><span class="dots"></span><span class="price">$48</span></div><p class="desc">Mixed flavors.</p></div>
+    <div class="item"><div class="row"><span class="name">Coffee Box (96 oz)</span><span class="dots"></span><span class="price">$32</span></div><p class="desc">Serves 10. Includes cups &amp; fixings.</p></div>
   </div>
 </section>
 
-<p class="fine">Before placing your order, please inform your server if a person in your party has a food allergy. Consuming raw or under-cooked meat, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness. Prices &amp; menu items subject to change without notice.</p>
+<section class="memorial" id="memorial">
+  <div class="inner">
+    <span class="eyebrow">Quiet, Dignified Service for Families</span>
+    <h2>Memorial Reception Trays</h2>
+    <p class="sub">We are honored to serve families during difficult times. Same-day orders welcomed when possible. Quiet drop-off, compostable serving ware available, and respectful coordination with the funeral home.</p>
+    <div class="mrow"><span class="name">Reception for 15</span><span class="d">3 pies, hero platter, salad, beverages</span><span class="price">$135</span></div>
+    <div class="mrow"><span class="name">Reception for 30</span><span class="d">Pasta tray, hero platter, salad, sweets</span><span class="price">$245</span></div>
+    <div class="mrow"><span class="name">Reception for 50</span><span class="d">2 pasta trays, hot tray, heroes, salad, cannoli</span><span class="price">$415</span></div>
+  </div>
+</section>
 
-<div class="endcta">
-  <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online for Pickup or Delivery</a>
-</div>
+<section class="bday" id="birthday">
+  <span class="eyebrow">Hosting a Kid's Birthday?</span>
+  <h2>Make Your Own <span class="ital">Pizza Party</span></h2>
+  <span class="price">$25 <small>per child</small></span>
+  <p>Every kid gets dough, sauce, cheese and toppings to build their own personal pie — baked fresh while they watch. Pizza, fun and cleanup handled.</p>
+  <a class="btn" href="tel:+17188354408">Call to Book a Party</a>
+</section>
+
+<section class="msec" id="how" style="padding-bottom:0">
+  <div class="head"><h2>How to Order</h2></div>
+  <div class="wrap order-grid">
+    <div class="oi">
+      <span class="eyebrow">Call</span>
+      <h3>(718) 835-4408</h3>
+      <p>Speak with us directly. We'll walk you through the order.</p>
+    </div>
+    <div class="oi">
+      <span class="eyebrow">Lead Time</span>
+      <h3>24 Hours Preferred</h3>
+      <p>Same-day available for smaller orders. Just ask.</p>
+    </div>
+    <div class="oi">
+      <span class="eyebrow">Delivery</span>
+      <h3>5-Mile Radius</h3>
+      <p>Free over $200. Setup available. Tip-friendly drivers.</p>
+    </div>
+  </div>
+  <div class="endcta">
+    <a class="btn" href="tel:+17188354408">Call (718) 835-4408</a>
+    <a class="btn ghost" href="https://calendly.com/tommyspizza11419/30min" target="_blank" rel="noopener">Book a Catering Call</a>
+  </div>
+</section>
 
 </main>
 
@@ -377,13 +339,13 @@ footer a{color:#e3e3e3}
   <div class="wrap">
     <img src="data:image/png;base64,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" alt="Tommy's Pizza — Since 1967" style="height:84px;width:auto;margin:0 auto 14px;display:block">
     <p class="sub">Liberty Avenue · Queens, NY</p>
-    <p class="fine2">117-11 Liberty Ave, South Richmond Hill, NY 11419 · <a href="tel:+17188354408">(718) 835-4408</a> · Daily 11 AM – 10:30 PM</p>
+    <p class="fine2">117-11 Liberty Ave, South Richmond Hill, NY 11419 · <a href="tel:+17188354408">(718) 835-4408</a> · tommyspizza11419@gmail.com</p>
   </div>
 </footer>
 
 <div class="orderbar">
-  <a class="call" href="tel:+17188354408">Call</a>
-  <a class="order" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Now</a>
+  <a class="call" href="menu.html">Menu</a>
+  <a class="order" href="tel:+17188354408">Call to Cater</a>
 </div>
 
 <script>
