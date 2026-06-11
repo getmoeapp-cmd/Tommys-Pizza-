@@ -3,86 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Menu | Tommy's Pizza | South Richmond Hill, Queens NY</title>
-<meta name="description" content="Full menu at Tommy's Pizza in South Richmond Hill, Queens — appetizers, salads, heroes, pastas, entrées, seafood, burgers, desserts and more. Family-owned since 1967. Order online for pickup or delivery.">
+<title>Tommy's Pizza | South Richmond Hill, Queens NY | Est. 1967</title>
+<meta name="description" content="Tommy's Pizza on Liberty Avenue — family-owned since 1967. New York slices, Sicilian squares, heroes, wings. Order online for delivery or pickup in South Richmond Hill, Ozone Park & Richmond Hill, Queens.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --white:#ffffff;--paper:#fafafa;--black:#111111;--gray:#6e6e6e;--line:#e3e3e3;
-  --red:#b91d47;--red-dk:#8e1536;--max:1140px;
+  --white:#ffffff;
+  --paper:#fafafa;
+  --black:#111111;
+  --gray:#6e6e6e;
+  --line:#e3e3e3;
+  --red:#b91d47;
+  --red-dk:#8e1536;
+  --max:1200px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{font-family:'Public Sans',sans-serif;background:var(--white);color:var(--black);line-height:1.6;font-size:16px;font-weight:300;padding-bottom:68px;-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Public Sans',sans-serif;background:var(--white);color:var(--black);
+  line-height:1.65;font-size:16px;font-weight:300;padding-bottom:68px;-webkit-font-smoothing:antialiased;
+}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.05}
 a{color:inherit}
+img{display:block;max-width:100%}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 .eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.28em;color:var(--gray)}
-.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.18em;padding:16px 36px;font-size:12px;transition:background .2s}
+.btn{
+  display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+  font-weight:600;text-transform:uppercase;letter-spacing:.18em;
+  padding:16px 36px;font-size:12px;transition:background .2s ease;
+}
 .btn:hover{background:var(--red-dk)}
+.btn.ghost{background:transparent;color:var(--black);box-shadow:inset 0 0 0 1px var(--black)}
+.btn.ghost:hover{background:var(--black);color:#fff}
 .btn:focus-visible,a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 
+/* announcement */
 .announce{background:var(--black);color:#fff;text-align:center;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;padding:9px 16px}
 .announce b{font-weight:600;color:#ffd2de}
 
+/* header */
 header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
 .logo{text-decoration:none;display:flex;flex-direction:column;line-height:1}
 .logo .name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;letter-spacing:.04em}
 .logo .sub{font-size:8.5px;font-weight:600;text-transform:uppercase;letter-spacing:.34em;color:var(--gray);margin-top:3px}
-.topbar nav.main{display:none;gap:36px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em}
-.topbar nav.main a{text-decoration:none;color:var(--gray);padding:6px 0;border-bottom:1px solid transparent}
-.topbar nav.main a:hover,.topbar nav.main a.on{color:var(--black);border-bottom-color:var(--black)}
+.topbar nav{display:none;gap:36px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em}
+.topbar nav a{text-decoration:none;color:var(--gray);transition:color .2s;padding:6px 0;border-bottom:1px solid transparent}
+.topbar nav a:hover{color:var(--black);border-bottom-color:var(--black)}
+.top-actions{display:flex;align-items:center;gap:18px}
+.top-phone{display:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-decoration:none}
+.top-phone:hover{color:var(--red)}
 .topbar .btn{padding:12px 24px}
-@media(min-width:900px){.topbar nav.main{display:flex}}
+@media(min-width:900px){.topbar nav{display:flex}.top-phone{display:inline}}
 
-/* page head */
-.page-head{text-align:center;padding:64px 24px 44px}
-.page-head h1{font-size:clamp(44px,7vw,76px)}
-.page-head h1 .ital{font-style:italic;font-weight:500}
-.page-head .rule{width:48px;height:1px;background:var(--black);margin:22px auto 0}
-.page-head p{max-width:520px;margin:18px auto 0;color:var(--gray);font-size:15px}
+/* hero */
+.hero{position:relative;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(35%) contrast(1.05)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.62))}
+.hero .inner{position:relative;z-index:2;text-align:center;padding:110px 24px 100px;max-width:820px;margin:0 auto}
+@media(min-width:900px){.hero .inner{padding:160px 24px 150px}}
+.hero .est{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4em;color:#d8d8d8;margin-bottom:26px}
+.hero .est::before,.hero .est::after{content:"—";margin:0 14px;color:#9a9a9a}
+.hero h1{font-size:clamp(54px,9.5vw,128px)}
+.hero h1 .ital{font-style:italic;font-weight:500}
+.hero p.lede{margin:26px auto 38px;font-size:17px;color:#e9e9e9;max-width:520px}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1px #fff}
+.hero .btn.ghost:hover{background:#fff;color:var(--black)}
+.hero .promo{margin-top:34px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#cfcfcf}
+.hero .promo b{color:#fff;font-weight:600}
 
-/* category nav */
-.catnav{position:sticky;top:72px;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.catnav .scroll{display:flex;gap:6px;overflow-x:auto;padding:12px 24px;max-width:var(--max);margin:0 auto;scrollbar-width:none}
-.catnav .scroll::-webkit-scrollbar{display:none}
-.catnav a{flex:0 0 auto;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--gray);text-decoration:none;padding:8px 14px;border:1px solid transparent;white-space:nowrap}
-.catnav a:hover{color:var(--black);border-color:var(--line)}
+/* services strip */
+.services{border-bottom:1px solid var(--line)}
+.svc-grid{display:grid}
+@media(min-width:760px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{padding:34px 28px;text-align:center;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.svc{border-bottom:none}.svc+.svc{border-left:1px solid var(--line)}}
+.svc h3{font-size:24px;margin:8px 0 6px}
+.svc p{font-size:13.5px;color:var(--gray)}
 
-/* menu sections */
-.msec{padding:64px 0 8px;scroll-margin-top:140px}
-.msec .head{text-align:center;margin-bottom:38px}
-.msec .head h2{font-size:clamp(32px,4.5vw,46px)}
-.msec .head .note{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-top:10px}
-.items{display:grid;gap:8px 64px;max-width:980px;margin:0 auto}
-@media(min-width:820px){.items{grid-template-columns:1fr 1fr}}
-.item{padding:14px 0;border-bottom:1px solid var(--line)}
-.item .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.item .name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600}
-.item .dots{flex:1;border-bottom:1px dotted #c9c9c9;transform:translateY(-5px)}
-.item .price{font-size:14px;font-weight:500;letter-spacing:.04em;white-space:nowrap}
-.item .desc{font-size:13.5px;color:var(--gray);margin-top:4px;max-width:420px}
+/* section base */
+section{padding:96px 0}
+.sec-head{text-align:center;margin-bottom:60px}
+.sec-head .eyebrow{display:block;margin-bottom:16px}
+.sec-head h2{font-size:clamp(38px,5.5vw,60px)}
+.sec-head h2 .ital{font-style:italic;font-weight:500}
+.sec-head .rule{width:48px;height:1px;background:var(--black);margin:22px auto 0}
+.sec-head p.sub{max-width:540px;margin:18px auto 0;color:var(--gray)}
 
-/* pizza callout */
-.pizza-call{background:var(--black);color:#fff;text-align:center;padding:70px 24px;margin-top:64px}
-.pizza-call h2{font-size:clamp(34px,5vw,52px)}
-.pizza-call h2 .ital{font-style:italic;font-weight:500}
-.pizza-call p{max-width:480px;margin:16px auto 30px;color:#b8b8b8;font-size:15px}
+/* menu */
+.menu-grid{display:grid;gap:34px}
+@media(min-width:800px){.menu-grid{grid-template-columns:repeat(3,1fr);gap:32px}}
+.dish .ph{overflow:hidden}
+.dish img{width:100%;aspect-ratio:4/3.2;object-fit:cover;transition:transform .6s ease}
+.dish:hover img{transform:scale(1.035)}
+.dish .body{padding:22px 4px 0;text-align:center}
+.dish h3{font-size:27px;margin-bottom:8px}
+.dish .eyebrow{display:block;margin-bottom:10px;font-size:10px}
+.dish p{font-size:14.5px;color:var(--gray)}
+.faves{max-width:640px;margin:76px auto 0;border-top:1px solid var(--line)}
+.fave{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:17px 4px;border-bottom:1px solid var(--line)}
+.fave .name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600}
+.fave .dots{flex:1;border-bottom:1px dotted #c9c9c9;transform:translateY(-5px)}
+.fave .price{font-size:14px;font-weight:500;letter-spacing:.04em}
+.note{font-size:12px;color:var(--gray);text-align:center;margin-top:14px;letter-spacing:.04em}
+.menu-cta{text-align:center;margin-top:44px}
 
-.fine{max-width:760px;margin:56px auto 0;padding:0 24px;text-align:center;font-size:11.5px;color:var(--gray);line-height:1.7;letter-spacing:.02em}
+/* story */
+.story-sec{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story{display:grid;gap:40px;align-items:center}
+@media(min-width:880px){.story{grid-template-columns:1fr 1fr;gap:90px}}
+.story img{width:100%;aspect-ratio:1/1.08;object-fit:cover}
+.story .eyebrow{display:block;margin-bottom:16px}
+.story h2{font-size:clamp(36px,4.5vw,54px);margin-bottom:24px}
+.story h2 .ital{font-style:italic;font-weight:500}
+.story p{margin-bottom:16px;color:#3c3c3c;font-size:15.5px}
+.story .btn{margin-top:10px}
 
-.endcta{text-align:center;padding:64px 24px}
+/* gallery */
+.gallery{padding:0;border-bottom:1px solid var(--line)}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.gal-grid{grid-template-columns:repeat(4,1fr)}}
+.gal-grid img{width:100%;aspect-ratio:1/1;object-fit:cover}
 
-footer{background:var(--black);color:#fff;padding:48px 0;text-align:center;margin-top:64px}
-footer .name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700}
-footer .sub{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.34em;color:#9a9a9a;margin-top:5px}
-footer .fine2{font-size:12px;color:#8a8a8a;margin-top:16px}
-footer a{color:#e3e3e3}
+/* reviews */
+.reviews-sec{background:var(--white)}
+.rev-grid{display:grid;gap:36px;max-width:1000px;margin:0 auto}
+@media(min-width:800px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
+.rev{text-align:center;padding:0 10px}
+.rev .stars{color:var(--red);letter-spacing:.3em;font-size:13px;margin-bottom:16px}
+.rev p{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;font-style:italic;line-height:1.45}
+.rev .who{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.24em;color:var(--gray);margin-top:16px;font-style:normal;font-family:'Public Sans',sans-serif}
+.rev-meta{text-align:center;margin-top:46px;font-size:12px;color:var(--gray);letter-spacing:.06em}
 
+/* catering */
+.cater{background:var(--black);color:#fff}
+.cater .sec-head .eyebrow{color:#9a9a9a}
+.cater .sec-head .rule{background:#fff}
+.cater .sec-head p.sub{color:#b8b8b8}
+.cater-grid{display:grid;gap:1px;background:#333;border:1px solid #333;max-width:920px;margin:0 auto}
+@media(min-width:760px){.cater-grid{grid-template-columns:1fr 1fr}}
+.cater .cell{background:var(--black);padding:48px 40px;text-align:center}
+.cater .cell h3{font-size:29px;margin:12px 0 14px}
+.cater .cell p{font-size:14.5px;color:#b8b8b8}
+.cater .cell .price{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;display:block;margin-top:18px}
+.cater .cell .eyebrow{color:#9a9a9a}
+.cater .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+.cater .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1px #fff}
+.cater .btn.ghost:hover{background:#fff;color:var(--black)}
+
+/* visit + map */
+.visit-grid{display:grid;gap:48px;align-items:start}
+@media(min-width:900px){.visit-grid{grid-template-columns:1fr 1.2fr;gap:70px}}
+.vinfo .block{padding:24px 0;border-bottom:1px solid var(--line)}
+.vinfo .block:first-child{padding-top:0}
+.vinfo .eyebrow{display:block;margin-bottom:10px}
+.vinfo p{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1.4}
+.vinfo a{text-decoration:none}
+.vinfo a:hover{text-decoration:underline}
+.zips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.zip{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gray);border:1px solid var(--line);padding:7px 13px}
+.mapbox{border:1px solid var(--line)}
+.mapbox iframe{width:100%;height:420px;border:0;display:block;filter:grayscale(100%) contrast(1.05)}
+
+/* footer */
+footer{background:var(--black);color:#fff;padding:70px 0 0;margin-top:0}
+.f-grid{display:grid;gap:44px;padding-bottom:56px}
+@media(min-width:800px){.f-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.f-brand .name{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700}
+.f-brand .sub{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.34em;color:#9a9a9a;margin-top:5px}
+.f-brand p{font-size:13.5px;color:#b8b8b8;margin-top:18px;max-width:300px}
+.f-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.26em;color:#9a9a9a;margin-bottom:18px}
+.f-col a,.f-col p{display:block;font-size:14px;color:#e3e3e3;text-decoration:none;margin-bottom:11px}
+.f-col a:hover{color:#fff;text-decoration:underline}
+.f-bottom{border-top:1px solid #2c2c2c;padding:22px 0;font-size:11.5px;color:#8a8a8a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;letter-spacing:.04em}
+
+/* sticky mobile order bar */
 .orderbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;box-shadow:0 -4px 14px rgba(0,0,0,.15)}
 .orderbar a{flex:1;text-align:center;padding:17px 8px;color:#fff;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:12px}
 .orderbar a.call{flex:0 0 34%;background:var(--black)}
@@ -96,261 +196,257 @@ footer a{color:#e3e3e3}
 
 <header class="site">
   <div class="wrap topbar">
-    <a class="logo" href="index.html">
+    <a class="logo" href="#top">
       <span class="name">Tommy's Pizza</span>
       <span class="sub">Est. 1967 · Queens, NY</span>
     </a>
-    <nav class="main" aria-label="Main">
-      <a class="on" href="menu.html">Menu</a>
-      <a href="index.html#story">Our Story</a>
-      <a href="index.html#catering">Catering</a>
-      <a href="index.html#visit">Visit</a>
+    <nav aria-label="Main">
+      <a href="menu.html">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#catering">Catering</a>
+      <a href="#visit">Visit</a>
     </nav>
-    <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+    <div class="top-actions">
+      <a class="top-phone" href="tel:+17188354408">(718) 835-4408</a>
+      <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+    </div>
   </div>
 </header>
 
-<div class="page-head">
-  <span class="eyebrow">Tommy's Pizza · Since 1967</span>
-  <h1>The <span class="ital">Menu</span></h1>
-  <div class="rule"></div>
-  <p>Everything made fresh to order on Liberty Avenue. Order online for pickup or delivery, or call (718) 835-4408.</p>
+<main id="top">
+
+<section class="hero" style="padding:0">
+  <img class="bg" src="https://d1w7312wesee68.cloudfront.net/R761kaVRgv8G3Q59c0XYf3pkhSW78WDGnJs0YUz5Pbw/ext:webp/quality:85/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/Untitled%20design.jpg" alt="Fresh pies at Tommy's Pizza" fetchpriority="high">
+  <div class="inner">
+    <p class="est">Liberty Avenue · Est. 1967</p>
+    <h1>Tommy's <span class="ital">Pizza</span></h1>
+    <p class="lede">Three generations of hand-tossed New York pies, Sicilian squares, heroes and wings — made fresh in South Richmond Hill every day.</p>
+    <div class="ctas">
+      <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+      <a class="btn ghost" href="menu.html">Explore the Menu</a>
+    </div>
+    <p class="promo">Dine In · Takeout · Delivery · Catering</p>
+  </div>
+</section>
+
+<div class="services">
+  <div class="wrap svc-grid" style="padding:0">
+    <div class="svc">
+      <span class="eyebrow">Fast &amp; Hot</span>
+      <h3>Delivery</h3>
+      <p>To South Richmond Hill, Ozone Park, Richmond Hill and nearby Queens.</p>
+    </div>
+    <div class="svc">
+      <span class="eyebrow">Skip the Line</span>
+      <h3>Pickup</h3>
+      <p>Order ahead online — your food is ready when you walk in.</p>
+    </div>
+    <div class="svc">
+      <span class="eyebrow">10 to 100 Guests</span>
+      <h3>Catering</h3>
+      <p>Trays, pies and party packages for any occasion.</p>
+    </div>
+  </div>
 </div>
 
-<nav class="catnav" aria-label="Menu sections">
-  <div class="scroll">
-    <a href="#pizza">Pizza</a>
-    <a href="#sicilian">Sicilian</a>
-    <a href="#gourmet">Gourmet Pizza</a>
-    <a href="#appetizers">Appetizers</a>
-    <a href="#salads">Salads</a>
-    <a href="#soups">Soups</a>
-    <a href="#heros">Heros</a>
-    <a href="#wraps">Wraps</a>
-    <a href="#burgers">Burgers</a>
-    <a href="#entrees">Entrées</a>
-    <a href="#pasta">Pasta</a>
-    <a href="#baked">Baked</a>
-    <a href="#seafood">Seafood</a>
-    <a href="#kids">Kids</a>
-    <a href="#desserts">Desserts</a>
-  </div>
-</nav>
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Menu</span>
+      <h2>Classic New York <span class="ital">Flavors</span></h2>
+      <div class="rule"></div>
+      <p class="sub">Everything made to order. The full menu and customization live on our online ordering page.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="dish">
+        <div class="ph"><img src="https://d1w7312wesee68.cloudfront.net/8287EuF3vHW_7BovY_420TidU7aFa982O3esMxeFz-s/ext:webp/quality:85/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/IMG_3884.jpg" alt="Classic New York–style cheese pizza" loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">By the slice or whole pie</span>
+          <h3>New York Pizza</h3>
+          <p>Crispy thin crust with the fold. Homemade sauce, aged mozzarella, your choice of toppings — up to our full 18" XL.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="ph"><img src="https://d1w7312wesee68.cloudfront.net/mEGap-K7McJNvtq0KSX8RFQfAMPQoTHTOwhmDUvKoG0/ext:webp/quality:85/c:2695:2442:ce:-90:1/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/Sicilian%20Slice.jpg" alt="Thick Sicilian slice with melted mozzarella" loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">Queens favorite</span>
+          <h3>Sicilian &amp; Grandma</h3>
+          <p>Thick, pillowy Sicilian squares and crispy-bottomed Grandma slices with fresh mozzarella, garlic and basil.</p>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="ph"><img src="https://d1w7312wesee68.cloudfront.net/m5ILPShG-jUKXypS263hmsZTGULiZgnsBmocFAJooNo/ext:webp/quality:85/plain/s3://toasttab/menu_service/restaurants/1afa355f-6372-42ef-b6bd-c21ec3ddee58/MenuItem/a40ab976-ee22-43ed-ba0c-bc466be6f849.jpg" alt="Chicken parm hero on Italian bread" loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">Beyond the pie</span>
+          <h3>Heroes, Wings &amp; Pasta</h3>
+          <p>Italian heroes on fresh bread, Buffalo wings, calzones stuffed with ricotta, and pastas in our signature marinara.</p>
+        </div>
+      </div>
+    </div>
 
-<main>
+    <div class="faves">
+      <div class="fave"><span class="name">Cheese Slice</span><span class="dots"></span><span class="price">$3.50</span></div>
+      <div class="fave"><span class="name">Garlic Knots</span><span class="dots"></span><span class="price">$5.75</span></div>
+      <div class="fave"><span class="name">Vodka Pie</span><span class="dots"></span><span class="price">$16.10</span></div>
+      <div class="fave"><span class="name">Buffalo Chicken Pie</span><span class="dots"></span><span class="price">$22.00</span></div>
+      <div class="fave"><span class="name">Margherita Pie</span><span class="dots"></span><span class="price">$22.00</span></div>
+    </div>
+    <p class="note">Prices shown for reference — live prices on the ordering page.</p>
 
-<!-- PIZZA -->
-<section class="msec" id="pizza">
-  <div class="head"><h2>Pizza</h2><p class="note">Classic cheese pies · By the slice available in store</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">XLarge 18"</span><span class="dots"></span><span class="price">19.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Medium 16"</span><span class="dots"></span><span class="price">17.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Small 14"</span><span class="dots"></span><span class="price">15.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Personal 10"</span><span class="dots"></span><span class="price">11.50</span></div></div>
-  </div>
-  <div class="head" style="margin-top:44px;margin-bottom:18px"><h2 style="font-size:clamp(24px,3.5vw,32px)">Toppings</h2></div>
-  <div class="wrap" style="max-width:980px">
-    <p style="text-align:center;font-size:14px;color:var(--gray);letter-spacing:.04em;line-height:2">
-      Mushrooms · Peppers · Onions · Olives · Pineapple · Broccoli · Spinach · Eggplant · Jalapeños · Tomatoes · Extra Cheese · Pepperoni · Sausage · Anchovies · Ham · Chicken · Shrimp
-    </p>
-  </div>
-</section>
-
-<section class="msec" id="sicilian">
-  <div class="head"><h2>Sicilian</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Sicilian</span><span class="dots"></span><span class="price">22</span></div><p class="desc">Thick-crusted, crispy undercarriage, airy center dough</p></div>
-    <div class="item"><div class="row"><span class="name">Grandma</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Crispy-crust airy dough topped with mozzarella and layered with tomato sauce, garlic &amp; olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Nonna's Trio</span><span class="dots"></span><span class="price">28</span></div><p class="desc">Topped with mozzarella &amp; layered with vodka, pesto &amp; marinara sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Drunken Sicilian</span><span class="dots"></span><span class="price">28</span></div><p class="desc">Creamy vodka sauce topped with fresh mozzarella &amp; basil</p></div>
-  </div>
-</section>
-
-<section class="msec" id="gourmet">
-  <div class="head"><h2>Gourmet Pizza</h2><p class="note">Personal 15 · Small 24 · Medium 26 · XLarge 28</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Tommy's Special</span></div><p class="desc">Pepperoni, sausage, eggplant, broccoli, red &amp; green peppers</p></div>
-    <div class="item"><div class="row"><span class="name">Margherita</span></div><p class="desc">Fresh tomato sauce, mozzarella cheese, basil leaves &amp; a drizzle of olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Buffalo</span></div><p class="desc">Fried chicken in our homemade buffalo sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Bacon Ranch</span></div><p class="desc">Fried chicken &amp; bacon drizzled with ranch dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Sweet Baby BBQ</span></div><p class="desc">Fried chicken in our BBQ sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Sweet Heat Hawaiian</span></div><p class="desc">Pineapple, ham &amp; red pepper flakes drizzled with honey</p></div>
-    <div class="item"><div class="row"><span class="name">Honeymooner</span></div><p class="desc">Savoury pepperoni drizzled with sweet honey</p></div>
-    <div class="item"><div class="row"><span class="name">Meatlovers</span></div><p class="desc">Pepperoni, sausage &amp; bacon</p></div>
-    <div class="item"><div class="row"><span class="name">Sizzling Fiesta</span></div><p class="desc">Ribeye steak, onions, peppers, green salsa &amp; cilantro</p></div>
-    <div class="item"><div class="row"><span class="name">Taco Loco</span></div><p class="desc">Seasoned beef, lettuce, tomato, three cheese &amp; taco sauce</p></div>
-    <div class="item"><div class="row"><span class="name">White</span></div><p class="desc">Creamy ricotta cheese and mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Cream of Spinach</span></div><p class="desc">Fresh spinach in our homemade creamy sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Vegetable</span></div><p class="desc">Eggplant, broccoli, red and green peppers &amp; mushroom</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Caesar</span></div><p class="desc">Grilled chicken, romaine lettuce, pecorino romano &amp; caesar dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ziti</span></div><p class="desc">Ziti pasta mixed with tomato sauce and ricotta cheese, topped with mozzarella cheese</p></div>
-  </div>
-  <div style="text-align:center;margin-top:36px">
-    <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Build Your Pie &amp; Order Online</a>
+    <div class="menu-cta">
+      <a class="btn ghost" href="menu.html" style="margin-right:10px">View Full Menu</a>
+      <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+    </div>
   </div>
 </section>
 
-<section class="msec" id="appetizers">
-  <div class="head"><h2>Appetizers</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Mini Rice Balls (4)</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Creamy rice filled with peas, tomato sauce and mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Clams (6)</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fresh little neck clams baked with seasoned breadcrumbs</p></div>
-    <div class="item"><div class="row"><span class="name">Stuffed Mushrooms (6)</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Mushroom caps filled with chopped mushroom, breadcrumbs, cheese, herbs &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Fried Calamari</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Coated in a light batter, fried golden &amp; crispy</p></div>
-    <div class="item"><div class="row"><span class="name">Mozzarella Sticks (6)</span><span class="dots"></span><span class="price">8.50</span></div><p class="desc">Crispy golden battered cheese sticks</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Wings (6)</span><span class="dots"></span><span class="price">9.50</span></div><p class="desc">Fresh party wings tossed in your choice of sauce — buffalo, BBQ, mango habanero, honey BBQ or garlic parm</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic Bread</span><span class="dots"></span><span class="price">6</span></div><p class="desc">Toasted Italian bread with garlic butter</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic Knots (5)</span><span class="dots"></span><span class="price">5</span></div><p class="desc">Freshly baked bread, olive oil and fresh garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Zucchini Fritte</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Crispy breaded zucchini slices</p></div>
-    <div class="item"><div class="row"><span class="name">French Fries</span><span class="dots"></span><span class="price">5.50</span></div><p class="desc">Served with ketchup</p></div>
+<section id="story" class="story-sec">
+  <div class="wrap story">
+    <img src="https://d1w7312wesee68.cloudfront.net/n478iphB3EiYqvoU9G2OXp7fH_0O5Zog8WZ4JrtfdbY/ext:webp/quality:85/plain/s3://toasttab/menu_service/restaurants/1afa355f-6372-42ef-b6bd-c21ec3ddee58/MenuItem/de72d647-9adb-49f9-a7c9-6c719d60fc84.jpg" alt="Margherita pizza with fresh mozzarella and basil" loading="lazy">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>A Queens Tradition <span class="ital">Since 1967</span></h2>
+      <p>Tommy's opened on Liberty Avenue in 1967 and never left. For nearly six decades we've watched kids grow up on our slices, become parents, and bring their own children in for the same pies.</p>
+      <p>The recipes haven't changed because they don't need to — dough made fresh every morning, our own sauce, premium mozzarella, baked to order.</p>
+      <a class="btn ghost" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Taste It Yourself</a>
+    </div>
   </div>
 </section>
 
-<section class="msec" id="salads">
-  <div class="head"><h2>Salads</h2><p class="note">Add chicken 6 · Add shrimp 9</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Italian</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Romaine lettuce, tomato, onion, olives &amp; cucumber</p></div>
-    <div class="item"><div class="row"><span class="name">Caesar</span><span class="dots"></span><span class="price">10</span></div><p class="desc">Romaine lettuce, pecorino romano &amp; croutons</p></div>
-    <div class="item"><div class="row"><span class="name">Caprese</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Homemade fresh mozzarella, sliced tomato, drizzle of balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Cold Antipasto</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Romaine lettuce, ham, tomato, broccoli, onion, olives, cucumber and mozzarella cheese</p></div>
+<div class="gallery">
+  <div class="gal-grid">
+    <img src="https://d1w7312wesee68.cloudfront.net/8287EuF3vHW_7BovY_420TidU7aFa982O3esMxeFz-s/ext:webp/quality:85/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/IMG_3884.jpg" alt="Cheese pizza" loading="lazy">
+    <img src="https://d1w7312wesee68.cloudfront.net/ZwwbpzHBmsNJFdnOGEHv_WT2GsGD1mrKoatP_i1FI4w/ext:webp/quality:85/c:1106:1009:ce:-3:-35/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/About%20Pic%201%20(1).jpg" alt="Veggie pizza with mushrooms, peppers and olives" loading="lazy">
+    <img src="https://d1w7312wesee68.cloudfront.net/mEGap-K7McJNvtq0KSX8RFQfAMPQoTHTOwhmDUvKoG0/ext:webp/quality:85/c:2695:2442:ce:-90:1/plain/s3://toast-sites-resources-prod/restaurantImages/e31c0368-fd2d-4243-aece-4441594ade30/Sicilian%20Slice.jpg" alt="Sicilian slice" loading="lazy">
+    <img src="https://d1w7312wesee68.cloudfront.net/m5ILPShG-jUKXypS263hmsZTGULiZgnsBmocFAJooNo/ext:webp/quality:85/plain/s3://toasttab/menu_service/restaurants/1afa355f-6372-42ef-b6bd-c21ec3ddee58/MenuItem/a40ab976-ee22-43ed-ba0c-bc466be6f849.jpg" alt="Chicken parm hero" loading="lazy">
   </div>
-</section>
-
-<section class="msec" id="soups">
-  <div class="head"><h2>Soups</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Chicken Noodle</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots &amp; spaghetti pasta</p></div>
-    <div class="item"><div class="row"><span class="name">Lentil</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots, onion &amp; tomato</p></div>
-    <div class="item"><div class="row"><span class="name">Minestrone</span><span class="dots"></span><span class="price">7</span></div><p class="desc">Celery, carrots, onion, green peas, chickpeas, green beans, red beans, spinach, potatoes &amp; tomatoes</p></div>
-  </div>
-</section>
-
-<section class="msec" id="heros">
-  <div class="head"><h2>Heros</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">The Racetrack</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fried chicken, grilled eggplant, roasted red pepper, fresh mozzarella &amp; balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Casino</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Toasted garlic bread, fried sausage, sautéed peppers &amp; onions &amp; fresh mozz</p></div>
-    <div class="item"><div class="row"><span class="name">Two Yoots</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fried chicken, pesto, vodka sauce &amp; fresh mozz</p></div>
-    <div class="item"><div class="row"><span class="name">JFK Heist</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Grilled chicken, fresh mozzarella, red peppers &amp; balsamic glaze</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fried chicken, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Parm</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Fried shrimp, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Meatball Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Beef meatballs, tomato sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Italian sausage, marinara sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Parm</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Breaded eggplant, tomato sauce &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Veal Parm</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Fried veal, marinara &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Philly Cheese</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Chopped ribeye steak, sautéed onions &amp; mozz cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Potato &amp; Egg</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Fried potato, egg &amp; mozz cheese</p></div>
-  </div>
-</section>
-
-<section class="msec" id="wraps">
-  <div class="head"><h2>Wraps</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Caesar</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Grilled chicken, romaine lettuce, pecorino romano and caesar dressing</p></div>
-    <div class="item"><div class="row"><span class="name">Buffalo</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Buffalo chicken, lettuce, tomato and american cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Grilled or fried chicken, lettuce, tomato and mayo</p></div>
-  </div>
-</section>
-
-<section class="msec" id="burgers">
-  <div class="head"><h2>Burgers</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Tommy's Cheeseburger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">8oz angus beef, american cheese, lettuce, tomato, red onion, mayo and ketchup, served with fries</p></div>
-    <div class="item"><div class="row"><span class="name">Spicy Turkey Burger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">6oz ground turkey, american cheese, lettuce, tomato and ketchup, served with fries</p></div>
-    <div class="item"><div class="row"><span class="name">BBQ Burger</span><span class="dots"></span><span class="price">13</span></div><p class="desc">8oz angus beef, american cheese, fried onion and BBQ sauce, served with fries</p></div>
-  </div>
-</section>
-
-<section class="msec" id="entrees">
-  <div class="head"><h2>Entrées</h2><p class="note">Add pasta or salad 4.50</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Chicken Cutlet Parmigiana</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Tomato sauce topped with mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Marsala</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-seared, savory marsala wine sauce &amp; mushrooms</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Francese</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-fried, silky lemon butter sauce enriched with white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Piccata</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Pan-seared, tangy butter sauce, lemon, capers &amp; white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Rollatini</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Sliced eggplant rolled with creamy ricotta filling, marinara &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Eggplant Parmigiana</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Thinly sliced eggplant layered with tomato sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage Parmigiana</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Italian sausage, marinara sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Sausage and Peppers</span><span class="dots"></span><span class="price">17</span></div><p class="desc">Italian sausage, bell peppers, onions &amp; tomato sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Veal Parmigiana</span><span class="dots"></span><span class="price">19</span></div><p class="desc">Fried veal cutlets, marinara sauce &amp; mozzarella cheese</p></div>
-  </div>
-</section>
-
-<section class="msec" id="pasta">
-  <div class="head"><h2>Pasta</h2><p class="note">Choice of penne, spaghetti, linguine, fettuccine, rigatoni, angel hair or whole wheat</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Romagna</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Pan fried sausage in a creamy onion garlic sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Bosca</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Chopped beef, mushrooms, sweet peas &amp; tomato sauce with a touch of cream</p></div>
-    <div class="item"><div class="row"><span class="name">Puttanesca</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Ripe tomatoes, savory anchovies, black olives, capers, chilli &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Toscana</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Fried chicken, cream sauce, spinach, cherry tomato &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Rustica</span><span class="dots"></span><span class="price">18</span></div><p class="desc">Grilled chicken, fresh spinach, roasted peppers, garlic &amp; oil</p></div>
-    <div class="item"><div class="row"><span class="name">Primavera</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Peas, carrots, broccoli, peppers, mushrooms, garlic &amp; oil &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Carbonara</span><span class="dots"></span><span class="price">16</span></div><p class="desc">Creamy sauce with crispy bacon &amp; fresh pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Alfredo</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Classic cream sauce with pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Vodka</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Creamy tomato sauce with vodka flavor</p></div>
-    <div class="item"><div class="row"><span class="name">Pesto</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Fresh creamy basil sauce, garlic &amp; pecorino romano</p></div>
-    <div class="item"><div class="row"><span class="name">Garlic &amp; Oil</span><span class="dots"></span><span class="price">14</span></div><p class="desc">Fresh garlic and extra virgin olive oil</p></div>
-    <div class="item"><div class="row"><span class="name">Marinara</span><span class="dots"></span><span class="price">13</span></div><p class="desc">Plum tomatoes, fresh basil &amp; garlic</p></div>
-    <div class="item"><div class="row"><span class="name">Tomato</span><span class="dots"></span><span class="price">12</span></div><p class="desc">Freshly made with rich blended tomatoes</p></div>
-  </div>
-</section>
-
-<section class="msec" id="baked">
-  <div class="head"><h2>Baked Specialties</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Lasagna</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Flat layered pasta, ground beef, tomato sauce, ricotta cheese &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ziti</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Tomato sauce, ricotta cheese &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Stuffed Shells</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Jumbo pasta shells, creamy ricotta, tomato sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Baked Ravioli</span><span class="dots"></span><span class="price">15</span></div><p class="desc">Cheese filled ravioli, tomato sauce &amp; mozzarella cheese</p></div>
-  </div>
-</section>
-
-<section class="msec" id="seafood">
-  <div class="head"><h2>Seafood</h2><p class="note">Served with pasta</p></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Mussels Positano</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Mussels simmered in a rich garlic butter sauce with a hint of white wine and red pepper, finished with parsley</p></div>
-    <div class="item"><div class="row"><span class="name">Amalfi Pasta</span><span class="dots"></span><span class="price">24</span></div><p class="desc">A generous mix of clams, mussels, calamari and shrimp simmered in white wine, finished in a creamy marinara</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Parmigiana</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Fried shrimp, marinara sauce &amp; mozzarella cheese</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Scampi</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Garlic buttery sauce enriched with white wine</p></div>
-    <div class="item"><div class="row"><span class="name">Shrimp Tommaso</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Sautéed shrimp, cherry tomatoes, garlic, parmesan and parsley in a light olive oil sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Fish &amp; Chips</span><span class="dots"></span><span class="price">24</span></div><p class="desc">Shrimp, calamari, mussels &amp; clams sautéed in garlic and olive oil with white wine, finished in a house marinara with a touch of cream</p></div>
-  </div>
-</section>
-
-<section class="msec" id="kids">
-  <div class="head"><h2>Kids Menu</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Pasta</span><span class="dots"></span><span class="price">8</span></div><p class="desc">Penne or spaghetti in a tomato or butter sauce</p></div>
-    <div class="item"><div class="row"><span class="name">Chicken Nuggets (4 pcs) &amp; Fries</span><span class="dots"></span><span class="price">8</span></div><p class="desc">Fried nuggets served with fries</p></div>
-  </div>
-</section>
-
-<section class="msec" id="desserts">
-  <div class="head"><h2>Desserts</h2></div>
-  <div class="wrap items">
-    <div class="item"><div class="row"><span class="name">Cheesecake</span><span class="dots"></span><span class="price">6.50</span></div></div>
-    <div class="item"><div class="row"><span class="name">Tres Leche</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Tiramisu</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Chocolate Mousse</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Red Velvet</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Zeppole</span><span class="dots"></span><span class="price">6</span></div></div>
-    <div class="item"><div class="row"><span class="name">Cannoli</span><span class="dots"></span><span class="price">6</span></div></div>
-  </div>
-</section>
-
-<p class="fine">Before placing your order, please inform your server if a person in your party has a food allergy. Consuming raw or under-cooked meat, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness. Prices &amp; menu items subject to change without notice.</p>
-
-<div class="endcta">
-  <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online for Pickup or Delivery</a>
 </div>
+
+<section id="reviews" class="reviews-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">From the Neighborhood</span>
+      <h2>What Queens <span class="ital">Says</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>One of the best real Italian pizza shops in Queens.</p>
+        <span class="who">Verified Customer</span>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Ordering since I was a kid — consistently great, my go-to spot.</p>
+        <span class="who">Verified Customer</span>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>Been coming here for decades. Absolutely delicious.</p>
+        <span class="who">Verified Customer</span>
+      </div>
+    </div>
+    <p class="rev-meta">4.6 ★ from 200+ ratings</p>
+  </div>
+</section>
+
+<section id="catering" class="cater">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Catering &amp; Events</span>
+      <h2>For Every <span class="ital">Occasion</span></h2>
+      <div class="rule"></div>
+      <p class="sub">Trays, pies and packages for groups of 10 to 100 — birthdays, office lunches, graduations and game days.</p>
+    </div>
+    <div class="cater-grid">
+      <div class="cell">
+        <span class="eyebrow">Kids' Birthday Package</span>
+        <h3>Make Your Own Pizza</h3>
+        <p>Every kid gets dough, sauce, cheese and toppings to build their own personal pie — baked fresh while they watch. Pizza, fun and cleanup handled.</p>
+        <span class="price">$25 <span style="font-size:16px;font-style:italic">per child</span></span>
+      </div>
+      <div class="cell">
+        <span class="eyebrow">Events of Every Size</span>
+        <h3>Trays &amp; Office Lunches</h3>
+        <p>Half and full trays of pastas, baked specialties, heroes and salads, plus pies by the stack. Tell us the headcount — we'll build the order.</p>
+      </div>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="https://calendly.com/tommyspizza11419/30min" target="_blank" rel="noopener">Book a Catering Call</a>
+      <a class="btn ghost" href="tel:+17188354408">Call Us</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Liberty Avenue, <span class="ital">Queens</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="visit-grid">
+      <div class="vinfo">
+        <div class="block">
+          <span class="eyebrow">Location</span>
+          <p><a href="https://google.com/maps/place?q=Tommys+Pizzeria%2C+11711+Liberty+Avenue%2C+Queens%2C+NY+11419" target="_blank" rel="noopener">117-11 Liberty Ave<br>South Richmond Hill, NY 11419</a></p>
+        </div>
+        <div class="block">
+          <span class="eyebrow">Hours</span>
+          <p>Open Daily · 11:00 AM – 10:30 PM</p>
+        </div>
+        <div class="block">
+          <span class="eyebrow">Contact</span>
+          <p><a href="tel:+17188354408">(718) 835-4408</a></p>
+        </div>
+        <div class="block">
+          <span class="eyebrow">Delivery Areas</span>
+          <div class="zips">
+            <span class="zip">11419</span><span class="zip">11420</span><span class="zip">11416</span><span class="zip">11417</span><span class="zip">11418</span>
+          </div>
+        </div>
+      </div>
+      <div class="mapbox">
+        <iframe title="Map to Tommy's Pizza" src="https://www.google.com/maps?q=Tommys+Pizzeria,+11711+Liberty+Avenue,+Queens,+NY+11419&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p class="name">Tommy's Pizza</p>
-    <p class="sub">Est. 1967 · Liberty Avenue · Queens, NY</p>
-    <p class="fine2">117-11 Liberty Ave, South Richmond Hill, NY 11419 · <a href="tel:+17188354408">(718) 835-4408</a> · Daily 11 AM – 10:30 PM</p>
+    <div class="f-grid">
+      <div class="f-brand">
+        <p class="name">Tommy's Pizza</p>
+        <p class="sub">Est. 1967 · Queens, NY</p>
+        <p>Family-owned for three generations. Authentic New York-style pizza, Sicilian squares and classic Italian dishes on Liberty Avenue.</p>
+      </div>
+      <div class="f-col">
+        <h4>Explore</h4>
+        <a href="menu.html">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#catering">Catering</a>
+      </div>
+      <div class="f-col">
+        <h4>Order</h4>
+        <a href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
+        <a href="tel:+17188354408">Call (718) 835-4408</a>
+        <a href="https://calendly.com/tommyspizza11419/30min" target="_blank" rel="noopener">Book Catering</a>
+      </div>
+      <div class="f-col">
+        <h4>Find Us</h4>
+        <p>117-11 Liberty Ave<br>South Richmond Hill, NY 11419</p>
+        <p>Daily 11 AM – 10:30 PM</p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Tommy's Pizza. All rights reserved.</span>
+      <span>Dine In · Takeout · Delivery · Catering</span>
+    </div>
   </div>
 </footer>
 
