@@ -40,7 +40,11 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);ba
 @media(min-width:900px){.topbar nav.main{display:flex}}
 
 
+.logo img{height:50px;width:auto;display:block}
+@media(min-width:900px){.logo img{height:56px}}
 /* mobile nav */
+.top-left{display:flex;align-items:center;gap:12px}
+
 .navtoggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:0;cursor:pointer;padding:8px}
 .navtoggle span{display:block;height:1.5px;background:var(--black);transition:transform .2s,opacity .2s}
 .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -110,20 +114,19 @@ footer a{color:#e3e3e3}
 
 <header class="site">
   <div class="wrap topbar">
-    <a class="logo" href="index.html">
-      <span class="name">Tommy's Pizza</span>
-      <span class="sub">Est. 1967 · Queens, NY</span>
-    </a>
+    <div class="top-left">
+      <button class="navtoggle" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <a class="logo" href="index.html" aria-label="Tommy's Pizza home">
+        <img src="tommys-logo.png" alt="Tommy's Pizza — Since 1967">
+      </a>
+    </div>
     <nav class="main" aria-label="Main">
       <a class="on" href="menu.html">Menu</a>
       <a href="index.html#story">Our Story</a>
       <a href="index.html#catering">Catering</a>
       <a href="index.html#visit">Visit</a>
     </nav>
-    <div style="display:flex;align-items:center;gap:8px">
-      <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
-      <button class="navtoggle" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
+    <a class="btn" href="https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue" target="_blank" rel="noopener">Order Online</a>
   </div>
   <nav class="mobilemenu" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
@@ -372,8 +375,8 @@ footer a{color:#e3e3e3}
 
 <footer>
   <div class="wrap">
-    <p class="name">Tommy's Pizza</p>
-    <p class="sub">Est. 1967 · Liberty Avenue · Queens, NY</p>
+    <img src="tommys-logo.png" alt="Tommy's Pizza — Since 1967" style="height:84px;width:auto;margin:0 auto 14px;display:block">
+    <p class="sub">Liberty Avenue · Queens, NY</p>
     <p class="fine2">117-11 Liberty Ave, South Richmond Hill, NY 11419 · <a href="tel:+17188354408">(718) 835-4408</a> · Daily 11 AM – 10:30 PM</p>
   </div>
 </footer>
