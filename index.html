@@ -126,7 +126,9 @@ section{padding:96px 0}
 .dish .eyebrow{display:block;margin-bottom:10px;font-size:10px}
 .dish p{font-size:14.5px;color:var(--gray)}
 .faves{max-width:640px;margin:76px auto 0;border-top:1px solid var(--line)}
-.fave{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:17px 4px;border-bottom:1px solid var(--line)}
+.fave{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:17px 4px;border-bottom:1px solid var(--line);color:inherit;transition:padding-left .2s}
+a.fave:hover{padding-left:8px}
+a.fave:hover .name{color:var(--red)}
 .fave .name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600}
 .fave .dots{flex:1;border-bottom:1px dotted #c9c9c9;transform:translateY(-5px)}
 .fave .price{font-size:14px;font-weight:500;letter-spacing:.04em}
@@ -316,13 +318,13 @@ footer{background:var(--black);color:#fff;padding:70px 0 0;margin-top:0}
     </div>
 
     <div class="faves">
-      <div class="fave"><span class="name">Cheese Slice</span><span class="dots"></span><span class="price">$3.50</span></div>
-      <div class="fave"><span class="name">Garlic Knots</span><span class="dots"></span><span class="price">$5.75</span></div>
-      <div class="fave"><span class="name">Vodka Pie</span><span class="dots"></span><span class="price">$16.10</span></div>
-      <div class="fave"><span class="name">Buffalo Chicken Pie</span><span class="dots"></span><span class="price">$22.00</span></div>
-      <div class="fave"><span class="name">Margherita Pie</span><span class="dots"></span><span class="price">$22.00</span></div>
+      <a class="fave" href="menu.html" style="text-decoration:none"><span class="name">Grandma Sicilian</span><span class="dots"></span><span class="price" style="font-style:italic;font-weight:400;color:var(--gray)">House favorite</span></a>
+      <a class="fave" href="menu.html" style="text-decoration:none"><span class="name">Tommy's Special</span><span class="dots"></span><span class="price" style="font-style:italic;font-weight:400;color:var(--gray)">Gourmet pie</span></a>
+      <a class="fave" href="menu.html" style="text-decoration:none"><span class="name">Nonna's Trio Sicilian</span><span class="dots"></span><span class="price" style="font-style:italic;font-weight:400;color:var(--gray)">Three sauces</span></a>
+      <a class="fave" href="menu.html" style="text-decoration:none"><span class="name">The Racetrack Hero</span><span class="dots"></span><span class="price" style="font-style:italic;font-weight:400;color:var(--gray)">Signature hero</span></a>
+      <a class="fave" href="menu.html" style="text-decoration:none"><span class="name">Buffalo Chicken Pie</span><span class="dots"></span><span class="price" style="font-style:italic;font-weight:400;color:var(--gray)">Gourmet pie</span></a>
     </div>
-    <p class="note">Prices shown for reference — live prices on the ordering page.</p>
+    <p class="note">A few neighborhood favorites — see the full menu for everything.</p>
 
     <div class="menu-cta">
       <a class="btn ghost" href="menu.html" style="margin-right:10px">View Full Menu</a>
