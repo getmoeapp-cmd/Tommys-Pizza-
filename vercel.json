@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/order",
+      "destination": "https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue",
+      "permanent": false
+    },
+    {
+      "source": "/order/:path*",
+      "destination": "https://www.toasttab.com/local/order/tommys-pizzeria-11711-liberty-avenue",
+      "permanent": false
+    }
+  ]
+}
