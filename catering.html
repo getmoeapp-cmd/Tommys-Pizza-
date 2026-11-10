@@ -183,6 +183,8 @@ footer a{color:#e3e3e3}
 .photo img{width:100%;height:auto;display:block;background:#eee}
 .storeline{text-align:center;font-size:13px;color:var(--gray);margin-top:26px}
 #quote{scroll-margin-top:80px}
+.ghlform{padding:0;min-height:1100px;scroll-margin-top:90px}
+.ghlform iframe{display:block;min-height:1100px}
 .qform{scroll-margin-top:90px}
 .f[hidden]{display:none}
 .orderbar a.order{background:var(--red);flex:1.4}
@@ -196,6 +198,12 @@ footer a{color:#e3e3e3}
 @media(min-width:920px),(hover:hover) and (pointer:fine){.sms-link{display:none}.sms-desk{display:inline}}
 @media(max-width:919px){.hero .ctas .btn{flex:1 1 auto;text-align:center;padding:12px 14px;letter-spacing:.14em}.hero .ctas{margin-top:12px}#ctas-top > a.btn:first-child{display:none}}
 </style>
+<script>
+/* Pass the page's ad/UTM params into the GHL form iframe (hidden fields utm_*, form_source, form_gclid read ?source= / ?gclid=). */
+function tpFormSrc(id){var f=document.getElementById(id);if(!f)return;var q=new URLSearchParams(location.search),o=new URLSearchParams();
+q.forEach(function(v,k){if(/^utm_/.test(k)||/^(gclid|gbraid|wbraid|fbclid|source)$/.test(k))o.set(k,v)});
+if(!o.get('source'))o.set('source','catering-page');f.src=f.getAttribute('data-base-src')+'?'+o.toString();}
+</script>
 </head>
 <body>
 
@@ -216,7 +224,7 @@ footer a{color:#e3e3e3}
       <a href="giftcards.html">Gift Cards</a>
       <a href="index.html#visit">Visit</a>
     </nav>
-    <a class="btn" href="#quote">Get a Quote</a>
+    <a class="btn" href="#qform-top">Get a Quote</a>
   </div>
   <nav class="mobilemenu" id="mnav" aria-label="Mobile">
     <a href="index.html">Home</a>
@@ -247,46 +255,14 @@ footer a{color:#e3e3e3}
       </ul>
     </div>
 
-<div class="qcard">
-  <!-- ===== GHL FORM SLOT (top) =====
-       OPTION A (preferred): once GHL Builder creates the native "Catering Inquiry" form in the
-       Tommys Pizza sub-account (0nFlrEdZ6HyXgG4kAj4l), replace the <form> below with its embed:
-       <iframe src="https://api.leadconnectorhq.com/widget/form/GHL_CATERING_FORM_ID" style="width:100%;height:760px;border:none" loading="lazy" title="Catering inquiry form" id="inline-GHL_CATERING_FORM_ID"></iframe>
-       <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
-       and set the GHL form's on-submit action to redirect to /catering-thank-you.html
-       OPTION B: keep this lightweight HTML form and set CATERING_ENDPOINT (bottom of page) to a
-       GHL Inbound Webhook URL that creates/updates the contact in 0nFlrEdZ6HyXgG4kAj4l.
-       ===== -->
-  <form class="qform" id="qform-top" novalidate>
-    <div class="qhead"><b>Get a Catering Quote</b><span>Takes about 30 seconds</span></div>
-    <div class="f"><label for="name-top">Name</label><input id="name-top" name="name" autocomplete="name" required></div>
-    <div class="f"><label for="phone-top">Mobile phone</label><input id="phone-top" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-    <div class="f2">
-      <div class="f"><label for="date-top">Event date</label><input id="date-top" name="event_date" type="date" required></div>
-      <div class="f"><label for="hc-top">Headcount</label><input id="hc-top" name="headcount" type="number" inputmode="numeric" min="1" max="2000" placeholder="e.g. 25" required></div>
-    </div>
-    <fieldset class="f seg"><legend>Pickup or delivery?</legend>
-      <label><input type="radio" name="fulfillment" value="Pickup" required><span>Pickup</span></label>
-      <label><input type="radio" name="fulfillment" value="Delivery"><span>Delivery</span></label>
-    </fieldset>
-    <div class="f addr" hidden><label for="addr-top">Delivery address</label><input id="addr-top" name="delivery_address" autocomplete="street-address" placeholder="Street, city, ZIP"></div>
-    <fieldset class="f"><legend>What are you interested in?</legend><div class="chips">
-<label class="chip"><input type="checkbox" name="interest" value="Party Packages"><span>Party Packages</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Pizza by the Pie"><span>Pizza by the Pie</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Pasta Trays"><span>Pasta Trays</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Hot Trays"><span>Hot Trays</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Salads &amp; Heroes"><span>Salads &amp; Heroes</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Appetizers"><span>Appetizers</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Sweets &amp; Drinks"><span>Sweets &amp; Drinks</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Memorial Reception"><span>Memorial Reception</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Kids' Pizza Party"><span>Kids' Pizza Party</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Office Lunch"><span>Office Lunch</span></label>
-    </div></fieldset>
-    <label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>Text me about my catering order. Msg &amp; data rates may apply. Reply STOP to opt out. <a href="terms.html">SMS Terms</a> · <a href="privacy.html">Privacy</a></span></label>
-    <p class="err" role="alert" hidden></p>
-    <button class="btn full" type="submit">Request My Quote</button>
-    <a class="btn ghost full book" href="#book">Or Book a Catering Call</a>
-  </form>
+<div class="qcard ghlform" id="qform-top">
+  <!-- ===== GHL FORM SLOT (top) — native GHL form "Catering Inquiry" (u4PEFzXHdfpCYeGPlMru), sub-account Tommys Pizza.
+       src is set by tpFormSrc() below (appends utm_*/gclid/gbraid/wbraid/fbclid/source; default source=catering-page).
+       No-JS fallback: plain src in <noscript>. form_embed.js is loaded ONCE at the end of <body>.
+       On submit GHL redirects to /catering-thank-you.html. ===== -->
+  <iframe data-base-src="https://link.worktrucksystems.com/widget/form/u4PEFzXHdfpCYeGPlMru" style="width:100%;height:100%;border:none;border-radius:8px" id="inline-u4PEFzXHdfpCYeGPlMru" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Catering Inquiry" data-height="1993" data-layout-iframe-id="inline-u4PEFzXHdfpCYeGPlMru" data-form-id="u4PEFzXHdfpCYeGPlMru" data-cookie-consent="true" data-cookie-consent-provider="auto" title="Catering Inquiry"></iframe>
+  <script>tpFormSrc("inline-u4PEFzXHdfpCYeGPlMru")</script>
+  <noscript><iframe src="https://link.worktrucksystems.com/widget/form/u4PEFzXHdfpCYeGPlMru?source=catering-page" style="width:100%;height:1100px;border:none" title="Catering Inquiry"></iframe></noscript>
 </div>
   </div>
 </section>
@@ -352,46 +328,14 @@ footer a{color:#e3e3e3}
       </div>
     </div>
 
-<div class="qcard">
-  <!-- ===== GHL FORM SLOT (mid) =====
-       OPTION A (preferred): once GHL Builder creates the native "Catering Inquiry" form in the
-       Tommys Pizza sub-account (0nFlrEdZ6HyXgG4kAj4l), replace the <form> below with its embed:
-       <iframe src="https://api.leadconnectorhq.com/widget/form/GHL_CATERING_FORM_ID" style="width:100%;height:760px;border:none" loading="lazy" title="Catering inquiry form" id="inline-GHL_CATERING_FORM_ID"></iframe>
-       <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
-       and set the GHL form's on-submit action to redirect to /catering-thank-you.html
-       OPTION B: keep this lightweight HTML form and set CATERING_ENDPOINT (bottom of page) to a
-       GHL Inbound Webhook URL that creates/updates the contact in 0nFlrEdZ6HyXgG4kAj4l.
-       ===== -->
-  <form class="qform" id="qform-mid" novalidate>
-    <div class="qhead"><b>Get a Catering Quote</b><span>Takes about 30 seconds</span></div>
-    <div class="f"><label for="name-mid">Name</label><input id="name-mid" name="name" autocomplete="name" required></div>
-    <div class="f"><label for="phone-mid">Mobile phone</label><input id="phone-mid" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-    <div class="f2">
-      <div class="f"><label for="date-mid">Event date</label><input id="date-mid" name="event_date" type="date" required></div>
-      <div class="f"><label for="hc-mid">Headcount</label><input id="hc-mid" name="headcount" type="number" inputmode="numeric" min="1" max="2000" placeholder="e.g. 25" required></div>
-    </div>
-    <fieldset class="f seg"><legend>Pickup or delivery?</legend>
-      <label><input type="radio" name="fulfillment" value="Pickup" required><span>Pickup</span></label>
-      <label><input type="radio" name="fulfillment" value="Delivery"><span>Delivery</span></label>
-    </fieldset>
-    <div class="f addr" hidden><label for="addr-mid">Delivery address</label><input id="addr-mid" name="delivery_address" autocomplete="street-address" placeholder="Street, city, ZIP"></div>
-    <fieldset class="f"><legend>What are you interested in?</legend><div class="chips">
-<label class="chip"><input type="checkbox" name="interest" value="Party Packages"><span>Party Packages</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Pizza by the Pie"><span>Pizza by the Pie</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Pasta Trays"><span>Pasta Trays</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Hot Trays"><span>Hot Trays</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Salads &amp; Heroes"><span>Salads &amp; Heroes</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Appetizers"><span>Appetizers</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Sweets &amp; Drinks"><span>Sweets &amp; Drinks</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Memorial Reception"><span>Memorial Reception</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Kids' Pizza Party"><span>Kids' Pizza Party</span></label>
-<label class="chip"><input type="checkbox" name="interest" value="Office Lunch"><span>Office Lunch</span></label>
-    </div></fieldset>
-    <label class="consent"><input type="checkbox" name="sms_consent" value="yes"><span>Text me about my catering order. Msg &amp; data rates may apply. Reply STOP to opt out. <a href="terms.html">SMS Terms</a> · <a href="privacy.html">Privacy</a></span></label>
-    <p class="err" role="alert" hidden></p>
-    <button class="btn full" type="submit">Request My Quote</button>
-    <a class="btn ghost full book" href="#book">Or Book a Catering Call</a>
-  </form>
+<div class="qcard ghlform" id="qform-mid">
+  <!-- ===== GHL FORM SLOT (mid) — native GHL form "Catering Inquiry" (u4PEFzXHdfpCYeGPlMru), sub-account Tommys Pizza.
+       src is set by tpFormSrc() below (appends utm_*/gclid/gbraid/wbraid/fbclid/source; default source=catering-page).
+       No-JS fallback: plain src in <noscript>. form_embed.js is loaded ONCE at the end of <body>.
+       On submit GHL redirects to /catering-thank-you.html. ===== -->
+  <iframe data-base-src="https://link.worktrucksystems.com/widget/form/u4PEFzXHdfpCYeGPlMru" style="width:100%;height:100%;border:none;border-radius:8px" id="inline-u4PEFzXHdfpCYeGPlMru-2" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Catering Inquiry" data-height="1993" data-layout-iframe-id="inline-u4PEFzXHdfpCYeGPlMru-2" data-form-id="u4PEFzXHdfpCYeGPlMru" data-cookie-consent="true" data-cookie-consent-provider="auto" title="Catering Inquiry"></iframe>
+  <script>tpFormSrc("inline-u4PEFzXHdfpCYeGPlMru-2")</script>
+  <noscript><iframe src="https://link.worktrucksystems.com/widget/form/u4PEFzXHdfpCYeGPlMru?source=catering-page" style="width:100%;height:1100px;border:none" title="Catering Inquiry"></iframe></noscript>
 </div>
   </div>
 </section>
@@ -503,7 +447,7 @@ footer a{color:#e3e3e3}
   <h2>Make Your Own <span class="ital">Pizza Party</span></h2>
   <span class="price">$25 <small>per child</small></span>
   <p>Every kid gets dough, sauce, cheese and toppings to build their own personal pie — baked fresh while they watch. Pizza, fun and cleanup handled.</p>
-  <a class="btn" href="#quote" data-interest="Kids' Pizza Party">Request a Party Date</a>
+  <a class="btn" href="#qform-top">Request a Party Date</a>
 </section>
 
 <section class="booksec" id="book">
@@ -542,7 +486,7 @@ footer a{color:#e3e3e3}
     </div>
   </div>
   <div class="endcta">
-    <a class="btn" href="#quote">Get a Catering Quote</a>
+    <a class="btn" href="#qform-top">Get a Catering Quote</a>
     <a class="btn ghost" href="#book">Book a Catering Call</a>
     <p class="storeline">Store: (718) 550-6173</p>
   </div>
@@ -562,7 +506,7 @@ footer a{color:#e3e3e3}
 <div class="orderbar">
   <a class="text" data-sms href="sms:+17185506173?body=Hi%2C%20I%27m%20interested%20in%20catering%20for%20%5Bdate%5D%20for%20%5B%23%5D%20people.">Text</a>
   <a class="call" href="#book">Book</a>
-  <a class="order" href="#quote">Quote</a>
+  <a class="order" href="#qform-top">Quote</a>
 </div>
 
 <script>
@@ -570,39 +514,16 @@ const t=document.querySelector('.navtoggle'),m=document.getElementById('mnav');
 t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
 m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false')}));
 
-/* ===== Catering form config =====
-   CATERING_ENDPOINT: '' = PREVIEW MODE (nothing is sent anywhere; validates, then shows the thank-you page).
-   Set to the GHL Inbound Webhook URL (Option B) to send leads into sub-account 0nFlrEdZ6HyXgG4kAj4l. */
-const CATERING_ENDPOINT='';
-const THANK_YOU='catering-thank-you.html';
 window.dataLayer=window.dataLayer||[];
-document.querySelectorAll('.qform').forEach(f=>{
-  const addr=f.querySelector('.addr'),ai=addr.querySelector('input'),err=f.querySelector('.err');
-  f.addEventListener('change',e=>{if(e.target.name==='fulfillment'){const d=e.target.value==='Delivery';addr.hidden=!d;ai.required=d}});
-  const d=f.querySelector('input[type=date]');d.min=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
-  f.addEventListener('submit',async e=>{
-    e.preventDefault();err.hidden=true;
-    const bad=[...f.querySelectorAll('[required]')].find(i=>!i.checkValidity());
-    if(bad){err.textContent='Please fill in: '+(bad.closest('.f').querySelector('label,legend').textContent);err.hidden=false;bad.focus();return}
-    if(!f.querySelector('[name=interest]:checked')){err.textContent='Please pick at least one thing you are interested in.';err.hidden=false;return}
-    const fd=new FormData(f),p={};fd.forEach((v,k)=>{p[k]=p[k]?p[k]+', '+v:v});
-    p.source='tommyspizzanyc.com/catering.html';p.form_position=f.id;p.page_url=location.href;
-    const b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending…';
-    try{
-      if(CATERING_ENDPOINT){await fetch(CATERING_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)})}
-      dataLayer.push({event:'catering_form_submit',form_position:f.id,headcount:p.headcount,fulfillment:p.fulfillment});
-      location.href=THANK_YOU+(CATERING_ENDPOINT?'':'?preview=1');
-    }catch(x){b.disabled=false;b.textContent='Request My Quote';err.textContent='Something went wrong sending your request. Please try again.';err.hidden=false}
-  });
-});
-document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{
-  const c=document.querySelector('#qform-top input[value="'+a.dataset.interest+'"]');if(c)c.checked=true}));
 /* SMS body syntax: default href uses ?body= (Android/no-JS). iOS/iPadOS needs &body= */
 (function(){var ua=navigator.userAgent,ios=/iPad|iPhone|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1);
 document.querySelectorAll('a[data-sms]').forEach(function(a){if(ios)a.href=a.getAttribute('href').replace('?body=','&body=');
 a.addEventListener('click',function(){dataLayer.push({event:'catering_text_click'})})})})();
 document.getElementById('bookbtn').addEventListener('click',()=>dataLayer.push({event:'catering_book_call_click'}));
 </script>
+
+<!-- GHL form embed loader (loaded once for both catering form iframes) -->
+<script src="https://link.worktrucksystems.com/js/form_embed.js"></script>
 
 <!-- GoHighLevel chat widget (SMS opt-in) -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6aba0d2a15c2d16d1361e447" data-source="WEB_USER"></script>
