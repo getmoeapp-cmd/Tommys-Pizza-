@@ -130,7 +130,7 @@ footer .fine2{font-size:12px;color:#8a8a8a;margin-top:16px}
 footer a{color:#e3e3e3}
 .orderbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;box-shadow:0 -4px 14px rgba(0,0,0,.15)}
 .orderbar a{flex:1;text-align:center;padding:17px 8px;color:#fff;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:12px}
-.orderbar a.call{flex:0 0 38%;background:var(--black)}
+.orderbar a.call{flex:1;background:var(--black)}
 .orderbar a.order{background:var(--red)}
 @media(min-width:900px){.orderbar{display:none}body{padding-bottom:0}}
 
@@ -183,7 +183,18 @@ footer a{color:#e3e3e3}
 .photo img{width:100%;height:auto;display:block;background:#eee}
 .storeline{text-align:center;font-size:13px;color:var(--gray);margin-top:26px}
 #quote{scroll-margin-top:80px}
-.orderbar a.order{background:var(--red)}
+.qform{scroll-margin-top:90px}
+.f[hidden]{display:none}
+.orderbar a.order{background:var(--red);flex:1.4}
+.orderbar a.text{background:#3a3a3a}
+.orderbar a{padding:17px 4px;letter-spacing:.16em}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:18px}
+.ctas .btn{padding:14px 22px}
+.smscta{font-size:13px;color:var(--gray)}
+.sms-link{color:var(--black);font-weight:500;text-decoration:underline;text-underline-offset:3px;padding:10px 2px;display:inline-block}
+.sms-desk{display:none}
+@media(min-width:920px),(hover:hover) and (pointer:fine){.sms-link{display:none}.sms-desk{display:inline}}
+@media(max-width:919px){.hero .ctas .btn{flex:1 1 auto;text-align:center;padding:12px 14px;letter-spacing:.14em}.hero .ctas{margin-top:12px}}
 </style>
 </head>
 <body>
@@ -224,6 +235,11 @@ footer a{color:#e3e3e3}
       <span class="eyebrow">Tommy's Pizza · Since 1967</span>
       <h1>Catering in South Richmond Hill <span class="ital">&amp; Ozone Park, Queens</span></h1>
       <p class="lead">Party packages, pizza, pasta and hot trays for your office, party or family gathering.<span class="more"> Tell us about your event and we'll put your order together.</span></p>
+      <div class="ctas" id="ctas-top">
+        <a class="btn" href="#qform-top">Get a Quote</a>
+        <a class="btn ghost" href="#book">Book a Catering Call</a>
+        <span class="smscta"><a class="sms-link" data-sms href="sms:+17185506173?body=Hi%2C%20I%27m%20interested%20in%20catering%20for%20%5Bdate%5D%20for%20%5B%23%5D%20people.">Text Us for Catering</a><span class="sms-desk">Text us at (718) 550-6173</span></span>
+      </div>
       <ul class="pts">
         <li>Free delivery over $200 within 5 miles</li>
         <li>24 hours' notice preferred · same-day for smaller orders</li>
@@ -329,6 +345,11 @@ footer a{color:#e3e3e3}
       <span class="eyebrow">Picked a package?</span>
       <h2>Request your catering quote</h2>
       <p>Send us your date, headcount and what you'd like. We'll confirm the details and your total. Prefer to talk it through? <a href="#book">Book a catering call</a>.</p>
+      <div class="ctas" id="ctas-mid">
+        <a class="btn" href="#qform-mid">Get a Quote</a>
+        <a class="btn ghost" href="#book">Book a Catering Call</a>
+        <span class="smscta"><a class="sms-link" data-sms href="sms:+17185506173?body=Hi%2C%20I%27m%20interested%20in%20catering%20for%20%5Bdate%5D%20for%20%5B%23%5D%20people.">Text Us for Catering</a><span class="sms-desk">Text us at (718) 550-6173</span></span>
+      </div>
     </div>
 
 <div class="qcard">
@@ -491,12 +512,12 @@ footer a{color:#e3e3e3}
   <p>Pick a time and we'll walk through your menu, headcount and delivery details.</p>
   <div class="calslot">
     <!-- ===== GHL CALENDAR SLOT =====
-         No calendar exists yet in the Tommys Pizza sub-account (0nFlrEdZ6HyXgG4kAj4l). When GHL Builder creates
-         the "Catering Call" calendar, replace the interim button below with its embed:
-         <iframe src="https://api.leadconnectorhq.com/widget/booking/GHL_CATERING_CALENDAR_ID" style="width:100%;border:none;overflow:hidden;min-height:640px" scrolling="no" loading="lazy" title="Book a catering call" id="GHL_CATERING_CALENDAR_ID_embed"></iframe>
+         GHL "Catering Call" calendar exists in sub-account 0nFlrEdZ6HyXgG4kAj4l: id GESRKSeDZWjAG4IHgXV4 (INACTIVE for now).
+         To switch on: activate the calendar in GHL, set its confirmation redirect to /catering-thank-you.html?type=call,
+         delete the interim Calendly button below, and un-comment these two lines:
+         <iframe src="https://api.leadconnectorhq.com/widget/booking/GESRKSeDZWjAG4IHgXV4" style="width:100%;border:none;overflow:hidden;min-height:640px" scrolling="no" loading="lazy" title="Book a catering call" id="GESRKSeDZWjAG4IHgXV4_1"></iframe>
          <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
-         and set the calendar's confirmation redirect to /catering-thank-you.html?type=call
-         INTERIM: the existing Calendly link from the current live page (does NOT land in GHL). ===== -->
+         INTERIM (live placeholder): the existing Calendly link from the current live page (does NOT land in GHL). ===== -->
     <a class="btn" id="bookbtn" href="https://calendly.com/tommyspizza11419/30min" target="_blank" rel="noopener">Choose a Time</a>
   </div>
 </section>
@@ -539,8 +560,9 @@ footer a{color:#e3e3e3}
 </footer>
 
 <div class="orderbar">
-  <a class="call" href="#book">Book a Call</a>
-  <a class="order" href="#quote">Get a Quote</a>
+  <a class="text" data-sms href="sms:+17185506173?body=Hi%2C%20I%27m%20interested%20in%20catering%20for%20%5Bdate%5D%20for%20%5B%23%5D%20people.">Text</a>
+  <a class="call" href="#book">Book</a>
+  <a class="order" href="#quote">Quote</a>
 </div>
 
 <script>
@@ -575,6 +597,10 @@ document.querySelectorAll('.qform').forEach(f=>{
 });
 document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{
   const c=document.querySelector('#qform-top input[value="'+a.dataset.interest+'"]');if(c)c.checked=true}));
+/* SMS body syntax: default href uses ?body= (Android/no-JS). iOS/iPadOS needs &body= */
+(function(){var ua=navigator.userAgent,ios=/iPad|iPhone|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1);
+document.querySelectorAll('a[data-sms]').forEach(function(a){if(ios)a.href=a.getAttribute('href').replace('?body=','&body=');
+a.addEventListener('click',function(){dataLayer.push({event:'catering_text_click'})})})})();
 document.getElementById('bookbtn').addEventListener('click',()=>dataLayer.push({event:'catering_book_call_click'}));
 </script>
 
